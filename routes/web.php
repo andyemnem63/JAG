@@ -22,3 +22,9 @@ Route::resource('/invite', 'InvitesController');
 
 //Trips
 Route::resource('/account', 'AccountController');
+
+
+//Api
+Route::get('/api', function() {
+    return [];
+});
