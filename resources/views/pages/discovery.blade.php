@@ -2,7 +2,7 @@
 <?php
 error_reporting(0);
 set_time_limit(0);
-echo Form::token();
+
 
 // https://www.yelp.com/developers/v3/manage_app
 $APP_ID = '8CbYl4nKrSecxSBTNFzvhw';
