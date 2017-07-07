@@ -5,6 +5,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/discovery', function () {
+    return view('pages.discovery');
+});
+
 Auth::routes();
 
 //Home
