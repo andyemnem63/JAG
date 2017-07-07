@@ -13,30 +13,20 @@
 
     <a href="/invite"></a>
 
-    {{--<div class="allTrips">--}}
-        {{--<h1>Shows All the trips</h1>--}}
-        {{--@foreach($allTrips as $trips)--}}
-            {{--@if($trips->trip_id == $currentUserId)--}}
-                {{--<a href="/invite/{{$trips->id}}">{{$trips->name}}</a>--}}
-                {{--<br><hr>--}}
-            {{--@endif--}}
-        {{--@endforeach--}}
-    {{--</div>--}}
-
+{{--Displays All the trips--}}
     <div class="testTrips">
         <h1>Test Trips</h1>
             @foreach($allInvites as $invites)
+            {{--If the Current user id is equal to the invite id .....--}}
                 @if($currentUserId == $invites->user_id)
+                {{--Display trips that links to Uri with their invite id--}}
                     <a href="/invite/{{$invites->invite_id}}">{{$invites->trip_name}}</a>
+                    <br>
+                    <hr>
                 @endif
             @endforeach
     </div>
 
-
-    {{--<div class="poll">--}}
-        {{--<a href="/Polls/{{$id}}" class="btn btn-success">YES</a>--}}
-        {{--<button id="no" class="btn btn-danger">No</button>--}}
-    {{--</div>--}}
 @endsection
 
 
