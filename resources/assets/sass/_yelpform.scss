@@ -1,6 +1,6 @@
 body {
   background: #eee;
-  font: 12px 'Lucida sans', Arial, Helvetica;
+  //font: 12px 'Lucida sans', Arial, Helvetica;
   color: #333;
   //text-align: center;
 }
@@ -40,7 +40,7 @@ a {
   padding: 10px 5px;
   margin-top: 10px;
   float: left;
-  font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  //font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 1px solid #ccc;
   -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
   -webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
@@ -78,7 +78,7 @@ a {
   height: 43px;
   padding: 10px 5px;
   float: left;
-  font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  //font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 1px solid #ccc;
   -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
   -webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
@@ -94,7 +94,7 @@ a {
   padding: 10px 5px;
   margin-top: 10px;
   float: left;
-  font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  //font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 1px solid #ccc;
   -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
   -webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
@@ -135,7 +135,7 @@ a {
   padding: 0;
   margin-left: 60px;
   cursor: pointer;
-  font: bold 15px Arial, Helvetica;
+  //font: bold 15px Arial, Helvetica;
   color: #fafafa;
   text-transform: uppercase;
   background-color: #0483a0;
@@ -184,13 +184,13 @@ table {
   box-shadow: 0 2px 0 #FFFFFF inset, 0 2px 4px rgba(52, 79, 90, 0.4);
   color: #777777;
 
-  font: normal 14px helvetica, arial;
+  //font: normal 14px helvetica, arial;
 
   margin:1% auto 0;
 }
 
 table, td, th, tr{
-  font-family: 'Sintony', sans-serif;
+  //font-family: 'Sintony', sans-serif;
 }
 
 th, td {padding:8px; }
@@ -249,7 +249,7 @@ tr:last-child td.last {
 h2{
   margin:20px 0 20px 0;
   padding:0;
-  font:54px/60px 'Sintony', sans-serif;
+  //font:54px/60px 'Sintony', sans-serif;
   font-weight: 700;
   color: #0483a0;
   text-align: center;
@@ -293,7 +293,7 @@ h2{
 #loading{
   margin:20px 0 20px 0;
   padding:0;
-  font:54px/60px 'Sintony', sans-serif;
+  //font:54px/60px 'Sintony', sans-serif;
   font-weight: 700;
   color: #CC3333;
   text-align: center;
@@ -303,7 +303,7 @@ h2{
 #error{
   margin:20px 0 20px 0;
   padding:0;
-  font:54px/60px 'Sintony', sans-serif;
+  //font:54px/60px 'Sintony', sans-serif;
   font-weight: 700;
   color: #CC3333;
   text-align: center;
@@ -338,12 +338,12 @@ input[type=radio]:checked + label {
 
 span.available{
   font-size:10px;
-  font-family:Arial;
+  //font-family:Arial;
   color:#009900;
 }
 
 span.registered{
   font-size:10px;
-  font-family:Arial;
+  //font-family:Arial;
   color:#CC3333;
 }
