@@ -79,3 +79,6 @@ Thumbs.db
 /.vagrant
 Homestead.json
 Homestead.yaml
+
+#Other
+package-lock.json

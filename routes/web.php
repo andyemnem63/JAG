@@ -5,13 +5,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/discovery', function () {
-    return view('pages.discovery');
-});
-
-Route::POST('/discovery', function () {
-    return view('pages.discovery');
-});
 
 Auth::routes();
 
@@ -26,3 +19,11 @@ Route::resource('/invite', 'InvitesController');
 
 //Trips
 Route::resource('/account', 'AccountController');
+
+//Discovery
+Route::get('/discovery', function () {
+    return view('pages.discovery');
+});
+Route::POST('/discovery', function () {
+    return view('pages.discovery');
+});
