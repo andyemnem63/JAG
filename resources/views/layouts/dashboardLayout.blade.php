@@ -15,5 +15,7 @@
 </head>
 <body>
     @yield('content')
+
+<script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
 </body>
 </html>

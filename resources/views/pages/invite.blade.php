@@ -6,20 +6,22 @@
            <div class="form-group">
                {{csrf_field()}}
                <label for="">Invite</label>
-               <input type="text" class="form-control" name="name">
+               <input type="text" id="myInput" onkeyup="userSearch()" name="name">
                <input type="hidden" name="id" value="{{$tripId}}">
                <input type="hidden" name="tripName" value="{{$tripName}}">
-           </div>
            <button type="submit" class="btn btn-primary">Submit</button>
+           </div>
        </form>
 
     {{--Display All users--}}
-       <h1>ALL Users</h1>
-       @foreach($allUsers as $users)
-            <h2 class="hide">{{$users->name}}</h2>
-            <hr><br>
-       @endforeach
-       <hr>
+           <ul id="userList">
+               @foreach($allUsers as $users)
+                 <li style="display: none">
+                     <a>{{$users->name}}</a>
+                 </li>
+                <hr><br>
+               @endforeach
+           </ul>
 
     {{--Display users that are going--}}
        <div class="usersGoing">
@@ -34,5 +36,5 @@
             @endforeach
        </div>
 
-    @endsection
+@endsection
 
