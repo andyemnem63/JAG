@@ -9,6 +9,10 @@ Route::get('/discovery', function () {
     return view('pages.discovery');
 });
 
+Route::POST('/discovery', function () {
+    return view('pages.discovery');
+});
+
 Auth::routes();
 
 //Home
