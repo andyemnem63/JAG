@@ -46,7 +46,17 @@
                 </div>
                 <div class="col-sm-11">
                     <!-- your page content -->
-                    @yield('content')
+                    <div class="row">
+                        <div class="col-sm-7" id="left-column" style="background-color: lightslategrey">
+                         <!-- Ya'll put shit in here for the left -->
+                            @yield('leftcontent')
+                        </div>
+
+                        <div class="col-sm-5" id="right-column" style="background-color: lightblue">
+                            <!-- Ya'll put shit in here for the right -->
+                            @yield('rightcontent')
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
