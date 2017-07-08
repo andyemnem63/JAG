@@ -31,9 +31,6 @@ $max		=   trim(strip_tags($_POST['max']));
 $mile = "";
 $mile = $_POST['mile'];
 if($mile == "") $mile = "0";
-
-
-
 ?>
         <!doctype html>
 <html lang="{{ app()->getLocale() }}">
@@ -41,7 +38,8 @@ if($mile == "") $mile = "0";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {{--Jquery--}}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
     <!-- CSRF Token -->
     <meta name=“csrf-token” content=“{{ csrf_token() }}“>
@@ -92,14 +90,12 @@ if($mile == "") $mile = "0";
     if($_POST){
 
     if($keywords == ""){
-
         echo '<p id="error">Please enter any keyword and location!</p>';
-
     }else{
     $curl = curl_init();
     $postfields = "client_id=" . $APP_ID .
-        "&client_secret=" . $APP_SECRET .
-        "&grant_type=" . 'client_credentials';
+                  "&client_secret=" . $APP_SECRET .
+                  "&grant_type=" . 'client_credentials';
 
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.yelp.com/oauth2/token',
@@ -117,13 +113,6 @@ if($mile == "") $mile = "0";
     curl_close($curl);
     $body = json_decode($response);
     $bearer_token = $body->access_token;
-
-
-
-
-
-
-
     ?>
 
     <table width="100%" border="0" align="left" cellpadding="5" cellspacing="0" class="box" style="color: #000000">
@@ -197,30 +186,23 @@ if($mile == "") $mile = "0";
         ?>
 
         <tr class="<?php echo $class ?>">
-            <td class="auto-style7"><?php echo $count ?></td>
-            <td class="auto-style7"><?php echo $image ?></td>
-            <td class="auto-style7"><?php echo $title ?></td>
-            <td class="auto-style7"><?php echo $address ?></td>
-            <td class="auto-style7"><?php echo $phone ?></td>
-            <td class="auto-style7"><?php echo $categories ?></td>
-            <td class="auto-style7"><?php echo $reviews ?></td>
-            <td class="auto-style7"><?php echo $rating ?></td>
-            <td class="auto-style7"><?php echo $closed ?></td>
+            <td class="parent auto-style7"><?php echo $count ?></td>
+            <td class="parent auto-style7"><?php echo $image ?></td>
+            <td class="parent auto-style7"><?php echo $title ?></td>
+            <td class="parent auto-style7"><?php echo $address ?></td>
+            <td class="parent auto-style7"><?php echo $phone ?></td>
+            <td class="parent auto-style7"><?php echo $categories ?></td>
+            <td class="parent auto-style7"><?php echo $reviews ?></td>
+            <td class="parent auto-style7"><?php echo $rating ?></td>
+            <td class="parent auto-style7"><?php echo $closed ?></td>
         </tr>
 
         <?php
         $sarray[] = $name."|DELIMITER|".$address."|DELIMITER|".str_replace("-"," ",$phone)."|DELIMITER|".$reviews."|DELIMITER|".$rating."|DELIMITER|".$categories."|DELIMITER|".$closed."|DELIMITER|".$url;
         $count++;
-
         }
-
         }
-
-
-
         }
-
-
         ?>
         <tr align="center">
             <td colspan="9"><p align="center" class="auto-style5">

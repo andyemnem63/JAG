@@ -11,13 +11,12 @@
         <button type="submit" class="btn btn-primary">Create New Trip</button>
     </form>
 
-    <a href="/invite"></a>
 
 {{--Displays All the trips--}}
     <div class="testTrips">
         <h1>Test Trips</h1>
             @foreach($allInvites as $invites)
-            {{--If the Current user id is equal to the invite id .....--}}
+            {{--If the Current user id is equal to the user id .....--}}
                 @if($currentUserId == $invites->user_id)
                 {{--Display trips that links to Uri with their invite id--}}
                     <a href="/invite/{{$invites->invite_id}}">{{$invites->trip_name}}</a>

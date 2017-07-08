@@ -13,6 +13,8 @@
            </div>
        </form>
 
+       <a href="/days/{{$tripId}}">Link to Days</a>
+
     {{--Display All users--}}
            <ul id="userList">
                @foreach($allUsers as $users)

@@ -18,9 +18,6 @@ Auth::routes();
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Itinerary Page
-Route::get('/itinerary', 'ItineraryController@index');
-
 //Invite
 Route::resource('/invite', 'InvitesController');
 
@@ -31,3 +28,7 @@ Route::resource('/account', 'AccountController');
 Route::get('/dash', function () {
     return view('pages.dash');
 });
+
+//Days
+Route::resource('/days', 'DaysController');
+
