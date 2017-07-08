@@ -29,6 +29,11 @@ Route::get('/dash', function () {
     return view('pages.dash');
 });
 
+//Testing Dashboard
+Route::get('/discover', function () {
+    return view('pages.discover');
+});
+
 //Days
 Route::resource('/days', 'DaysController');
 
