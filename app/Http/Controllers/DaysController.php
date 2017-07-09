@@ -27,16 +27,17 @@ class DaysController extends Controller
 //        return redirect()->route('days',[$request->id]);
         return back()->withInput();
     }
-
+//$id is the invite_id in invite Table which comes from account.blade
     public function show($id)
     {
         $allDays = Days::all();
-        return view('pages.days', ['trip_id' => $id])->with(['allDays' => $allDays]);
+        return view('pages.days', ['trip_id' => $id])->with(['allDays' => $allDays])
+                    ->with('layout.appdashTest');
     }
 
     public function edit($id)
     {
-        //
+//        dd($id);
     }
 
     public function update(Request $request, $id)

@@ -1,6 +1,10 @@
-@extends('layouts.dashboardLayout')
+{{--@extends('layouts.dashboardLayout')--}}
+@extends('layouts.appdash')
 
-    @section('content')
+
+{{--@section('content')--}}
+@section('rightcontent')
+
    {{--Search for user that exist--}}
        <form action="{{route('invite.store')}}" method="post" role="form">
            <div class="form-group">

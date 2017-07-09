@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="sidebar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="text-center"><a href="#"><i class="trvlrs-calendar"></i></a></li>
-                            <li class="text-center"><a href="/invite"><i class="trvlrs-mail"></i></a></li>
+                            <li class="text-center"><a href="/invite/{{$trip_id}}/edit"><i class="trvlrs-mail"></i></a></li>
                             <li class="text-center"><a href="/discovery"><i class="trvlrs-location"></i></a></li>
                             <li class="text-center"><a href="#"><i class="trvlrs-banknote"></i></a></li>
                         </ul>

@@ -27,7 +27,7 @@ class AccountController extends Controller
     {
 
     }
-//Store to trip table
+//Store to trip table and Invites Table
     public function store(Request $request)
     {
         $userId = Auth::id();

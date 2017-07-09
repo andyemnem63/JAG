@@ -12,14 +12,14 @@
     </form>
 
 
-{{--Displays All the trips--}}
-    <div class="testTrips">
+    {{--Trips--}}
+    <div class="trips">
         <h1>Test Trips</h1>
             @foreach($allInvites as $invites)
             {{--If the Current user id is equal to the user id .....--}}
                 @if($currentUserId == $invites->user_id)
                 {{--Display trips that links to Uri with their invite id--}}
-                    <a href="/invite/{{$invites->invite_id}}">{{$invites->trip_name}}</a>
+                    <a href="/days/{{$invites->invite_id}}">{{$invites->trip_name}}</a>
                     <br>
                     <hr>
                 @endif

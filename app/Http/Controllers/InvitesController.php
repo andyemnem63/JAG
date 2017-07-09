@@ -16,7 +16,16 @@ class InvitesController extends Controller
     public function index()
     {
         $allUsers = User::all();
-        return view('pages.invite', ['allUsers' => $allUsers]);
+        $allTrips = Trip::all();
+        $currentUserId = Auth::id();
+        $allInvites = Invite::all();
+        $tripName = DB::select('select NAME FROM trips WHERE id=?', [$currentUserId]);
+//        return view('pages.invite', ['allUsers' => $allUsers]);
+        return view('pages.mainInvite', ['currentUserId' => $currentUserId])
+                    ->with(['tripName' => $tripName[0]->NAME])
+                    ->with(['allUsers' => $allUsers])
+                    ->with(['allInvites' => $allInvites])
+                    ->with(['allTrips' =>$allTrips]);
     }
 
     public function create()
@@ -33,9 +42,9 @@ class InvitesController extends Controller
 
         $inviteTable = new Invite;
         $inviteTable->invite_id = $request->id;
-        $inviteTable->user_id = $userId[0]->ID;
         $inviteTable->name = $request->name;
         $inviteTable->trip_name = $request->tripName;
+        $inviteTable->user_id = $userId[0]->ID;
         $inviteTable->save();
 
         return back()->withInput();
@@ -47,13 +56,29 @@ class InvitesController extends Controller
         $tripName = DB::select('select NAME FROM trips WHERE id=?', [$id]);
         $allUsers = User::all();
         $allInvites = Invite::all();
-
-        return view('pages.invite', ['allUsers' => $allUsers])->with(['tripId' => $id])->with(['allInvites' => $allInvites])->with                      (['tripName' => $tripName[0]->NAME]);
+        return view('pages.invite', ['allUsers' => $allUsers])
+                        ->with(['tripId' => $id])
+                        ->with(['allInvites' => $allInvites])
+                        ->with(['tripName' => $tripName[0]->NAME]);
     }
 
     public function edit($id)
     {
-        //
+
+        $allUsers = User::all();
+        $allTrips = Trip::all();
+        $currentUserId = Auth::id();
+        $allInvites = Invite::all();
+//        $tripName = DB::select('select NAME FROM trips WHERE id=?', [$currentUserId]);
+        $tripName = DB::select('select NAME FROM trips WHERE id=?', [$id]);
+
+        return view('pages.mainInvite', ['currentUserId' => $currentUserId])
+            ->with(['tripName' => $tripName[0]->NAME])
+            ->with(['tripId' => $id])
+            ->with(['allUsers' => $allUsers])
+            ->with(['allInvites' => $allInvites])
+            ->with(['allTrips' =>$allTrips]);
+
     }
 
     public function update(Request $request, $id)
