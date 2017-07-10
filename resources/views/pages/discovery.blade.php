@@ -114,7 +114,7 @@
 
 
             foreach($response->businesses as $business){
-            if ($business->image_url != "") $image = "<a href='" . $business->image_url . "' target='_blank'><img border=0 height='100' width='100' src='" . str_replace("o.jpg", "ms.jpg", $business->image_url) . "' /></a>";
+            if ($business->image_url != "") $image = "<a href='" . $business->image_url . "' target='_blank'><images border=0 height='100' width='100' src='" . str_replace("o.jpg", "ms.jpg", $business->image_url) . "' /></a>";
             $name = $business->name;
             $cla = $business->is_closed;
             $url = $business->url;
