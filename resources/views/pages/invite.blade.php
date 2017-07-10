@@ -1,8 +1,6 @@
-{{--@extends('layouts.dashboardLayout')--}}
-@extends('layouts.appdash-NEWTEST')
+@extends('layouts.dashboard-dual')
 
 
-{{--@section('content')--}}
 @section('rightcontent')
 
    {{--Search for user that exist--}}

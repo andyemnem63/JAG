@@ -1,4 +1,3 @@
-{{--Goes to acctLayout in the layouts folder--}}
 @extends('layouts.dashboardLayout')
 
 @section('content')

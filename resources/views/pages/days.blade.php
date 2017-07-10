@@ -1,6 +1,5 @@
-{{--Goes to acctLayout in the layouts folder--}}
 @extends('layouts.dashboard-dual')
-{{--@section('content')--}}
+
 @section('leftcontent')
 {{--Create Days--}}
     <h1>Trip Id {{$trip_id}}</h1>

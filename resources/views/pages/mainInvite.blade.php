@@ -1,9 +1,7 @@
-{{--@extends('layouts.dashboardLayout')--}}
 @extends('layouts.dashboard-dual')
 
-
-{{--@section('content')--}}
 @section('leftcontent')
+
     <h1>Invite</h1>
     {{--Search for user that exist--}}
     <form action="{{route('invite.store')}}" method="post" role="form">
