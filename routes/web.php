@@ -12,6 +12,10 @@ Route::get('/discovery', function () {
 Route::POST('/discovery', function () {
     return view('pages.discovery');
 });
+// Twilio
+Route::get('/twilio', function () {
+    return view('pages.twilio');
+});
 
 Auth::routes();
 
