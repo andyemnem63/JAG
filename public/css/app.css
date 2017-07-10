@@ -8691,3 +8691,18 @@ input[type="color"]:focus,
   }
 }
 
+/*Map Styles*/
+
+#map {
+  width: 600px;
+  height: 600px;
+  float: left;
+}
+
+#panel {
+  width: 300px;
+  float: right;
+  font-family: Arial;
+  font-size: 16px;
+}
+
