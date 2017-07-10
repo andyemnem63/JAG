@@ -1,13 +1,7 @@
 @extends('layouts.dashboard-dual')
 
-@section('rightcontent')
-
-    <div class="map" id="map-content">
-
-    </div>
 
 
-@endsection
 
 
 
@@ -46,8 +40,7 @@
     $mile = $_POST['mile'];
     if ($mile == "") $mile = "0";
     ?>
-<<<<<<< Updated upstream
-=======
+
     {{--<!doctype html>--}}
     {{--<html lang="{{ app()->getLocale() }}">--}}
     {{--<head>--}}
@@ -103,8 +96,6 @@
         </select>
         <input type="submit" value="go" class="go" id="submit">
     </form>
->>>>>>> Stashed changes
-
 
 
     <div id="results">
@@ -248,3 +239,11 @@
 
 
 
+@section('rightcontent')
+
+    <div class="map" id="map-content">
+
+    </div>
+
+
+@endsection

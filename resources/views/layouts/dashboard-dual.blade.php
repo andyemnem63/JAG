@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
+
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://file.myfontastic.com/cmbgRkayBnHXSnPo8TJuHj/icons.css" rel="stylesheet">
@@ -40,6 +42,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!--Google Maps-->
+<script type="text/javascript" src="{{ URL::asset('js/maps.js') }}"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCevUUOwKBB5xPrEyig2d5x3tcmHioGOLY&callback=initMap"></script>
 
 </body>
 </html>
