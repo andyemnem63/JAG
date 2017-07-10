@@ -1,5 +1,5 @@
 {{--@extends('layouts.dashboardLayout')--}}
-@extends('layouts.appdash')
+@extends('layouts.dashboard-dual')
 
 
 {{--@section('content')--}}

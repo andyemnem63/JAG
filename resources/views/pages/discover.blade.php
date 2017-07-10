@@ -1,7 +1,7 @@
-@extends('layouts.appdash')
+@extends('layouts.dashboard-single')
 
 
-@section('fullcontent')
+@section('content')
     <?php
     error_reporting(0);
     set_time_limit(0);
@@ -12,40 +12,46 @@
     $APP_SECRET = 'rg1x7FX7TcOhbt9LyGlUnPXkp1ThnzKzfwwMLl1Jw7o29QtLD4W1pgxNE7pvCXSP';
 
 
-    $download = "";
-    $download = $_POST['download'];
-    if ($download != "") {
-        $darray = unserialize(base64_decode($download));
-        header('Content-type: application/vnd.ms-excel');
-        header('Content-disposition: attachment; filename="data.xls"');
-        foreach ($darray as $value) {
-            $value = str_replace("|DELIMITER|", "	", $value);
-            echo $value . "\n";
-        }
-        exit();
-    }
-    $keywords = "";
-    $location = "";
-    $max = "";
+    //    $download = "";
+    //    $download = $_POST['download'];
+    //    if ($download != "") {
+    //        $darray = unserialize(base64_decode($download));
+    //        header('Content-type: application/vnd.ms-excel');
+    //        header('Content-disposition: attachment; filename="data.xls"');
+    //        foreach ($darray as $value) {
+    //            $value = str_replace("|DELIMITER|", "	", $value);
+    //            echo $value . "\n";
+    //        }
+    //        exit();
+    //    }
+    //    $keywords = "";
+    //    $location = "";
+    //    $max = "";
     $keywords = trim(strip_tags($_POST['keywords']));
     $location = trim(strip_tags($_POST['location']));
     $max = trim(strip_tags($_POST['max']));
 
-    $mile = "1";
+    //    $mile = "10";
     $mile = $_POST['mile'];
-    if ($mile == "") $mile = "0";
+    //    if ($mile == "") $mile = "0";
     ?>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div class="text-center" style="height: 100vh; color: white; margin-top: 35vh;">
-                <h1><strong>Discover awesome things to do, food to eat, and places to stay.</strong></h1>
-                <h3>Choose a place to search near:</h3>
-                <br>
-                <form id="formSubmit" class="form-wrapper" action="/discovery" method="post"><input type="hidden"
-                                                                                                    name="_token"
 
-                                                                                                    value="<?php echo csrf_token(); ?>">
-                <!--
+
+    <form id="formSubmit" class="form-wrapper" action="/discovery" method="post"><input type="hidden"
+                                                                                        name="_token"
+                                                                                        value="<?php echo csrf_token(); ?>">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="text-center" style="color: white; margin-top: 35vh;">
+                    <h1><strong>Discover awesome things to do,<br> food to eat, and places to stay.</strong></h1>
+                    <br>
+                    {{--<br>--}}
+                    {{--<h3>Choose a place to search near:</h3>--}}
+
+                </div>
+            </div>
+        </div>
+    <!--
         <strong>Search Within </strong>
         <input type="radio" id="radio1" name="mile" value="1609" <?php if ($mile == "1609") echo "checked"; ?>>
         <label for="radio1">1 Mile</label>
@@ -60,14 +66,27 @@
         <input type="radio" id="radio6" name="mile" value="0" <?php if ($mile == "0") echo "checked"; ?>>
         <label for="radio6">Max</label>
         -->
-
-                    <input type="text" id="search" name="keywords"
-                           <?php if ($keywords != "") echo 'value="' . $keywords . '"'; ?> placeholder="Search by business name, or keyword..."
-                           required>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="input-group input-group-lg ">
+                    <span class="input-group-addon trvlrs-location"></span>
                     <input type="text" id="location" name="location"
-                           <?php if ($location != "") echo 'value="' . $location . '"'; ?> placeholder="City, Address, ZIP Code, or Neighborhood..."
+                           <?php if ($location != "") echo 'value="' . $location . '"'; ?> class="form-control discover-input"
+                           placeholder="Choose a place to search near"
                            required>
-                <!--
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon trvlrs-search"></span>
+                    <input type="text" id="search" name="keywords"
+                           <?php if ($keywords != "") echo 'value="' . $keywords . '"'; ?> class="form-control discover-input"
+                           placeholder="Search for activity, food or accommodation"
+                           required>
+                </div>
+                <br>
+            </div>
+
+        <!--
         <select name="max" id="select">
             <optgroup label="Max Results">
                 <option value="0" <?php if ($max == "0") echo "selected"; ?>>50</option>
@@ -78,10 +97,14 @@
             </optgroup>
         </select>
         -->
-                    <input type="submit" value="go" id="submit">
-                </form>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 text-right">
+                    <button class="btn btn-lg btn-primary text-center">Submit</button>
+                </div>
             </div>
+            {{--<input type="submit" value="go" id="submit">--}}
         </div>
-    </div>
+    </form>
+
 @endsection
 

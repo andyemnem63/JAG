@@ -1,0 +1,105 @@
+body, html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url('../../../public/img/welcome-fs1.jpg');
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blanco {
+  color: white !important;
+}
+
+.navbar-default {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+  position: relative;
+  top: -6px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+
+.navbar-default {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.welcome-logo {
+  margin: 8vw 0 4vw 0;
+  width: 30vw;
+}
+
+/*MEDIA QUERIES*/
+/*!* Landscape tablets and medium desktops *!*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .welcome-logo {
+    margin: 10vw 0 4vw 0;
+    width: 50vw;
+  }
+}
+
+/*!* Portrait tablets and small desktops *!*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .welcome-logo {
+    margin: 20vw 0 4vw 0;
+    width: 50vw;
+  }
+}
+
+/*!* Landscape phones and portrait tablets *!*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .welcome-logo {
+    margin: 30vw 0 4vw 0;
+    width: 70vw;
+  }
+}
+
+/*!* Portrait phones and smaller *!*/
+@media (max-width: 480px) {
+  .welcome-logo {
+    margin: 30vw 0 4vw 0;
+    width: 80vw;
+  }
+}
