@@ -16,7 +16,7 @@
 </head>
 <body class="bg">
 <div id="app">
-    @include('inc.splash-navbar')
+    @include('inc.splash-top-nav')
     @yield('content')
 </div>
 </body>

@@ -16,20 +16,22 @@
     <!--FontAwesome-->
     {{--<script src="https://use.fontawesome.com/8eb4ed0827.js"></script>--}}
 </head>
-<body class="discover-bg">
+<body>
 <div id="app">
+    <h1>Trips </h1>
 
     <div class="container-fluid">
         <div class="row">
-            @include('inc.dash-side-nav')
-            <div class="col-sm-11">
-                @yield('content')
-            </div>
+            {{--@include('inc.navbar')--}}
+            @yield('content')
         </div>
     </div>
+</div>
 </div>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </body>
 </html>
+
