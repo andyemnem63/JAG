@@ -3,8 +3,8 @@
     $(document).ready(function () {
 
 
-        $('.go').on('click', function (event) {
-            // event.preventDefault();
+        $('.go').on('click', function () {
+            alert('clicked');
             var addressArray = $('#location').val().trim();
             // Testing/Debugging //
             console.log('maps view click');
