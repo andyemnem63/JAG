@@ -1,6 +1,6 @@
 {{--Goes in to dashboard layout in the layout folder--}}
-@extends('layouts.dashboardLayout')
+@extends('layouts.dashboard-dual')
 
-@section('content')
+@section('rightcontent')
     <a href="/invite">Invite Collaborators</a>
 @endsection
