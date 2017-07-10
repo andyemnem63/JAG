@@ -1,4 +1,4 @@
-@extends('layouts.accountLayout')
+@extends('layouts.account-layout')
 
 @section('content')
 {{--Creates New Trip--}}

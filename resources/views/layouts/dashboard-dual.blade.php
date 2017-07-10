@@ -19,7 +19,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            @include('inc.navbar')
+            @include('inc.dash-side-nav')
             <div class="col-sm-11">
                 <div class="row">
                     <div class="col-sm-7" id="left-column" style="background-color: lightslategrey">

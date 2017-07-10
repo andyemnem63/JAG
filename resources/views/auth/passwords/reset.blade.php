@@ -1,4 +1,4 @@
-@extends('layouts.splash')
+@extends('layouts.splash-layout')
 
 @section('content')
     <div class="container">
