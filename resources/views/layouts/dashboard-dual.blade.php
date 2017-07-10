@@ -47,7 +47,7 @@
 <!--Google Maps-->
 <script type="text/javascript" src="{{ URL::asset('js/maps.js') }}"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCevUUOwKBB5xPrEyig2d5x3tcmHioGOLY&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNfKjepbX3VkJFWOWG5TLmpNGdcaRrsHg&callback=initMap"></script>
 
 </body>
 </html>
