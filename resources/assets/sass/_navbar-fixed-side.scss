@@ -8,10 +8,10 @@ $colDefault: #ffffff;
 $colHighlight: #ffffff;
 $dropDown: true;
 
-i {
- font-size: 3.5rem;
-  font-weight: bolder;
+.nav-icon {
+  font-size: 2.5rem;
 }
+
 
 .navbar-fixed-side {
   @media (max-width: $grid-float-breakpoint) {
@@ -20,14 +20,14 @@ i {
   }
 
   @media (min-width: $grid-float-breakpoint) {
-    $navbar-default-link-hover-bg: darken($navbar-default-bg, 3%);
-    $navbar-inverse-link-hover-bg: lighten($navbar-inverse-bg, 5%);
-    $navbar-inverse-border: lighten($navbar-inverse-bg, 8%);
+    //$navbar-default-link-hover-bg: darken($navbar-default-bg, 3%);
+    //$navbar-inverse-link-hover-bg: lighten($navbar-inverse-bg, 5%);
+    //$navbar-inverse-border: lighten($navbar-inverse-bg, 8%);
 
     position: fixed;
     margin: 0 -15px;
     height: 100vh;
-    width: inherit;
+    width: 65px;
     overflow: auto;
     border-top-width: 0;
     border-bottom-width: 0;
@@ -55,7 +55,6 @@ i {
 
     .navbar-collapse {
       width: 100%;
-      border-top: 1px solid $navbar-default-border;
     }
 
     .navbar-nav {
@@ -65,9 +64,8 @@ i {
       > li {
         float: none;
         > a {
-          padding-top: 10px;
-          padding-bottom: 10px;
-          //border-bottom: 1px solid $navbar-default-border;
+          padding-top: 20px;
+          padding-bottom: 13px;
         }
       }
     }
@@ -77,7 +75,6 @@ i {
       margin-left: -$navbar-padding-horizontal;
       margin-right: -$navbar-padding-horizontal;
       padding: 10px $navbar-padding-horizontal;
-      //border-bottom: 1px solid $navbar-default-border;
     }
 
     .navbar-text {
@@ -100,7 +97,6 @@ i {
         background-color: transparent;
         border: 0;
         box-shadow: none;
-        //border-bottom: 1px solid $navbar-default-border;
 
         > li > a,
         .dropdown-header {
@@ -111,26 +107,18 @@ i {
           > a {
             line-height: $line-height-computed;
             color: $navbar-default-link-color;
-
-            &:hover, &:focus {
-              //background-image: none;
-            }
           }
         }
 
         > .active > a {
-          //background-color: $navbar-default-link-active-bg;
           background-color: $bgHover;
-          //color: $navbar-default-link-active-color;
         }
       }
 
       > li > a,
       .dropdown-menu > li > a {
         &:hover, &:focus {
-          //background-color: $navbar-default-link-hover-bg;
           background-color: $bgHover;
-          //color: $navbar-default-link-hover-color;
         }
       }
     }
@@ -248,7 +236,6 @@ i {
     > .open {
       > a, > a:hover, > a:focus {
         color: $colHighlight;
-        //color: $bgHover;
         background-color: $bgHighlight;
       }
     }
@@ -268,7 +255,6 @@ i {
   }
   .navbar-link {
     color: $colDefault;
-    //color: $bgHover;
     &:hover {
       color: $colHighlight;
     }

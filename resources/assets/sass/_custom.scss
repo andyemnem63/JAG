@@ -2,7 +2,67 @@ body {
   background-color: #555;
 }
 
-.navicon {
-  //font-size: xx-large;
-  height: 30px;
+// Fix the focus glow on all inputs to be white
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(255, 255, 255, 0.6);
+  outline: 0 none;
 }
+
+
+
+.discover-bg {
+  background-image: url('../../../public/img/cityscape.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.discover-input {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.5);
+  max-width: 600px;
+  font-weight: 200;
+
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(255, 255, 255, 0.5);
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: rgba(255, 255, 255, 0.5);
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.5);
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+}
+
+.input-group-addon {
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.input-group .trvlrs-location {
+  margin-bottom: -10px;
+}
+

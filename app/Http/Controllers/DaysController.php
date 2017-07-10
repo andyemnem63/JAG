@@ -31,8 +31,7 @@ class DaysController extends Controller
     public function show($id)
     {
         $allDays = Days::all();
-        return view('pages.days', ['trip_id' => $id])->with(['allDays' => $allDays])
-                    ->with('layout.appdashTest');
+        return view('pages.days', ['trip_id' => $id])->with(['allDays' => $allDays]);
     }
 
     public function edit($id)

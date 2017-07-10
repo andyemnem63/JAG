@@ -1,7 +1,5 @@
 {{--Goes to acctLayout in the layouts folder--}}
-{{--@extends('layouts.dashboardLayout')--}}
-@extends('layouts.appdashTest')
-
+@extends('layouts.dashboard-dual')
 {{--@section('content')--}}
 @section('leftcontent')
 {{--Create Days--}}
