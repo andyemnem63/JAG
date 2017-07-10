@@ -1,5 +1,15 @@
 @extends('layouts.dashboard-dual')
 
+@section('rightcontent')
+
+    <div class="map" id="map-content">
+
+    </div>
+
+
+@endsection
+
+
 
 @section('leftcontent')
 
@@ -36,6 +46,64 @@
     $mile = $_POST['mile'];
     if ($mile == "") $mile = "0";
     ?>
+<<<<<<< Updated upstream
+=======
+    {{--<!doctype html>--}}
+    {{--<html lang="{{ app()->getLocale() }}">--}}
+    {{--<head>--}}
+    {{--<meta charset="utf-8">--}}
+    {{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
+    {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
+    {{--Jquery--}}
+    {{--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>--}}
+
+    <!-- CSRF Token -->
+    {{--<meta name=“csrf-token” content=“{{ csrf_token() }}“>--}}
+    {{--<meta charset="utf-8">--}}
+    {{--<title>Trvlrs Tool</title>--}}
+    {{--<link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>--}}
+    {{--<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">--}}
+    {{----}}
+    {{--</head>--}}
+
+    {{--<body>--}}
+
+    {{--<h2>Trvlrs Tool</h2>--}}
+
+    <form id="formSubmit" class="form-wrapper" action="/discovery" method="post"><input type="hidden" name="_token"
+                                                                                        value="<?php echo csrf_token(); ?>">
+        <strong>Search Within </strong>
+        <input type="radio" id="radio1" name="mile" value="1609" <?php if ($mile == "1609") echo "checked"; ?>>
+        <label for="radio1">1 Mile</label>
+        <input type="radio" id="radio2" name="mile" value="4828" <?php if ($mile == "4828") echo "checked"; ?>>
+        <label for="radio2">3 Miles</label>
+        <input type="radio" id="radio3" name="mile" value="8046" <?php if ($mile == "8046") echo "checked"; ?>>
+        <label for="radio3">5 Miles</label>
+        <input type="radio" id="radio4" name="mile" value="16093" <?php if ($mile == "16093") echo "checked"; ?>>
+        <label for="radio4">10 Miles</label>
+        <input type="radio" id="radio5" name="mile" value="40000" <?php if ($mile == "40000") echo "checked"; ?>>
+        <label for="radio5">25 Miles</label>
+        <input type="radio" id="radio6" name="mile" value="0" <?php if ($mile == "0") echo "checked"; ?>>
+        <label for="radio6">Max</label>
+
+        <input type="text" id="search" name="keywords"
+               <?php if ($keywords != "") echo 'value="' . $keywords . '"'; ?> placeholder="Search by business name, or keyword..."
+               required>
+        <input type="text" id="location" name="location"
+               <?php if ($location != "") echo 'value="' . $location . '"'; ?> placeholder="City, Address, ZIP Code, or Neighborhood..."
+               required>
+        <select name="max" id="select">
+            <optgroup label="Max Results">
+                <option value="0" <?php if ($max == "0") echo "selected"; ?>>50</option>
+                <option value="50" <?php if ($max == "50") echo "selected"; ?>>100</option>
+                <option value="200" <?php if ($max == "200") echo "selected"; ?>>250</option>
+                <option value="450" <?php if ($max == "450") echo "selected"; ?>>500</option>
+                <option value="950" <?php if ($max == "950") echo "selected"; ?>>1000</option>
+            </optgroup>
+        </select>
+        <input type="submit" value="go" class="go" id="submit">
+    </form>
+>>>>>>> Stashed changes
 
 
 
@@ -177,9 +245,6 @@
     {{--</html>--}}
 
 @endsection
-<!-- Glen dump all map shit here!! -->
 
-@section('rightcontent')
 
-@endsection
 
