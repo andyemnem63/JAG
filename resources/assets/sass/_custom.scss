@@ -1,3 +1,6 @@
+a {
+  text-decoration: none !important;
+}
 
 // Fix the focus glow on all inputs to be white
 textarea:focus,
@@ -15,13 +18,12 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
+
 .uneditable-input:focus {
   border-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(255, 255, 255, 0.6);
   outline: 0 none;
 }
-
-
 
 .discover-bg {
   background-image: url('../../../public/images/cityscape.jpg');
@@ -38,16 +40,16 @@ input[type="color"]:focus,
   max-width: 600px;
   font-weight: 200;
 
-  ::-webkit-input-placeholder { /* WebKit browsers */
+  .discover-input ::-webkit-input-placeholder { /* WebKit browsers */
     color: rgba(255, 255, 255, 0.5);
   }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  .discover-input :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color: rgba(255, 255, 255, 0.5);
   }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+  .discover-input ::-moz-placeholder { /* Mozilla Firefox 19+ */
     color: rgba(255, 255, 255, 0.5);
   }
-  :-ms-input-placeholder { /* Internet Explorer 10+ */
+  .discover-input :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: rgba(255, 255, 255, 0.5);
   }
 
@@ -62,4 +64,21 @@ input[type="color"]:focus,
 .input-group .trvlrs-location {
   margin-bottom: -10px;
 }
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+  position: relative;
+  top: -6px;
+}
+
+.discovery-result-panel > .panel-heading {
+  padding: 0px !important;
+}
+//.discovery-result-panel > .panel-body > img {
+//  width: 100%;
+//  height: 100%;
+//}
+//.discovery-result-panel > .panel-footer {
+//  text-align: center;
+//}
 

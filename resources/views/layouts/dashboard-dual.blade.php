@@ -24,12 +24,12 @@
             @include('inc.dash-side-nav')
             <div class="col-sm-11">
                 <div class="row">
-                    <div class="col-sm-7" id="left-column" style="background-color: lightslategrey">
+                    <div class="col-sm-7" id="left-column">
                         <!-- put content for the left pane here -->
                         @yield('leftcontent')
                     </div>
 
-                    <div class="col-sm-5" id="right-column" style="background-color: lightblue">
+                    <div class="col-sm-5" id="right-column">
                         <!-- put content for the right pane here -->
                         @yield('rightcontent')
                     </div>
