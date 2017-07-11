@@ -9,7 +9,7 @@
             {{csrf_field()}}
             <label for="">Invite</label>
             <input type="text" name="name" id="myInput" onkeyup="userSearch()">
-            <input type="hidden" name="id" value="{{$tripId}}">
+            <input type="hidden" name="id" value="{{$trip_id}}">
             <input type="hidden" name="tripName" value="{{$tripName}}">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
@@ -33,7 +33,7 @@
         <h1>Users Going</h1>
         @foreach($allInvites as $invites)
         {{--If Invite Id == Trip Id--}}
-            @if($invites->invite_id == $tripId)
+            @if($invites->invite_id == $trip_id)
                 {{$invites->name}}
                 <br>
                 <hr>
