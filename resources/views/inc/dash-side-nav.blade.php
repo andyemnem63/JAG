@@ -15,8 +15,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="sidebar-collapse">
             <ul class="nav navbar-nav">
-                <li class="text-center"><a href="#"><i class="nav-icon trvlrs-calendar"></i></a></li>
-                <li class="text-center"><a href="/invite/1/edit"><i class="nav-icon trvlrs-mail"></i></a></li>
+                <li class="text-center"><a href="/days/{{$trip_id}}"><i class="nav-icon trvlrs-calendar"></i></a></li>
+                <li class="text-center"><a href="/invite/{{$trip_id}}/edit"><i class="nav-icon trvlrs-mail"></i></a></li>
                 <li class="text-center"><a href="/discover"><i class="nav-icon trvlrs-location"></i></a></li>
                 <li class="text-center"><a href="#"><i class="nav-icon trvlrs-banknote"></i></a></li>
             </ul>
