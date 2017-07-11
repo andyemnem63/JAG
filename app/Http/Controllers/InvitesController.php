@@ -74,7 +74,7 @@ class InvitesController extends Controller
 
         return view('pages.mainInvite', ['currentUserId' => $currentUserId])
             ->with(['tripName' => $tripName[0]->NAME])
-            ->with(['tripId' => $id])
+            ->with(['trip_id' => $id])
             ->with(['allUsers' => $allUsers])
             ->with(['allInvites' => $allInvites])
             ->with(['allTrips' =>$allTrips]);
