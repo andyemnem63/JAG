@@ -5,7 +5,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Discovery
+// Discovery
 Route::get('/discovery', function () {
     return view('pages.discovery');
 });
@@ -19,25 +19,20 @@ Route::get('/twilio', function () {
 
 Auth::routes();
 
-//Home
+// Home
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Invite
+// Invite
 Route::resource('/invite', 'InvitesController');
 
-//Trips
+// Trips
 Route::resource('/account', 'AccountController');
 
-//Testing Dashboard
-Route::get('/dash', function () {
-    return view('pages.dash');
-});
-
-//Testing Dashboard
+// Discover
 Route::get('/discover', function () {
     return view('pages.discover');
 });
 
-//Days
+// Days
 Route::resource('/days', 'DaysController');
 

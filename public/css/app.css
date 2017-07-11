@@ -8350,6 +8350,10 @@ button.close {
   }
 }
 
+a {
+  text-decoration: none !important;
+}
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -8388,22 +8392,22 @@ input[type="color"]:focus,
   font-weight: 200;
 }
 
-.discover-input ::-webkit-input-placeholder {
+.discover-input .discover-input ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: rgba(255, 255, 255, 0.5);
 }
 
-.discover-input :-moz-placeholder {
+.discover-input .discover-input :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: rgba(255, 255, 255, 0.5);
 }
 
-.discover-input ::-moz-placeholder {
+.discover-input .discover-input ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: rgba(255, 255, 255, 0.5);
 }
 
-.discover-input :-ms-input-placeholder {
+.discover-input .discover-input :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: rgba(255, 255, 255, 0.5);
 }
@@ -8416,6 +8420,16 @@ input[type="color"]:focus,
 
 .input-group .trvlrs-location {
   margin-bottom: -10px;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+  position: relative;
+  top: -6px;
+}
+
+.discovery-result-panel > .panel-heading {
+  padding: 0px !important;
 }
 
 .nav-icon {

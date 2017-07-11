@@ -18,14 +18,8 @@
 </head>
 <body>
 <div id="app">
-    <h1>Trips </h1>
-
-    <div class="container-fluid">
-        <div class="row">
-            {{--@include('inc.navbar')--}}
-            @yield('content')
-        </div>
-    </div>
+    @include('inc.account-top-nav')
+    @yield('content')
 </div>
 </div>
 
