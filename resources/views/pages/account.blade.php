@@ -31,15 +31,21 @@
                         {{--Trips--}}
                         <div class="trips">
                             @foreach($allInvites as $invites)
-                                {{--If the Current user id is equal to the user id .....--}}
+                            {{--If the Current user id is equal to the user id .....--}}
                                 @if($currentUserId == $invites->user_id)
-                                    <hr>
-                                    {{--Display trips that links to Uri with their invite id--}}
-
+                                        <hr>
+                                {{--Display trips that links to Uri with their invite id--}}
                                     <h4 style="display: inline"><strong>{{$invites->trip_name}}</strong></h4>
-
                                     <span class="pull-right" style="position: relative; bottom: 7px;">
-                                        <button class="btn btn-default"><strong>Cancel</strong></button>
+
+                                    {{--Delete Trip--}}
+                                        <form action="/account/{{$invites->invite_id}}" method="post" role="form">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-default"><strong>Cancel</strong></button>
+                                        </form>
+
+                                        {{--Goes to days page--}}
                                         <a href="/days/{{$invites->invite_id}}">
                                             <button class="btn btn-primary"><strong>View <i class="glyphicon glyphicon-chevron-right"></i></strong></button>
                                         </a>

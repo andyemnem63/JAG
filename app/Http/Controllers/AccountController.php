@@ -19,8 +19,9 @@ class AccountController extends Controller
         $currentUserId = Auth::id();
         $allTrips = Trip::all();
 
-        return view('pages.account', ['allTrips' => $allTrips])->with(['currentUserId' => $currentUserId])->with(['allInvites'
-                    => $allInvites]);
+        return view('pages.account', ['allTrips' => $allTrips])
+                    ->with(['currentUserId' => $currentUserId])
+                    ->with(['allInvites' => $allInvites]);
     }
 
     public function create()
@@ -57,16 +58,21 @@ class AccountController extends Controller
 
     public function edit($id)
     {
-        //
+
     }
 
     public function update(Request $request, $id)
     {
-        //
+
     }
 
+//Deletes trips from Trips table and Invites Table
     public function destroy($id)
     {
-        //
+    // Deletes from the trips table
+       Db::delete("DELETE FROM trips WHERE id = $id");
+       Db::delete("DELETE FROM invites WHERE invite_id = $id");
+
+        return redirect('account');
     }
 }
