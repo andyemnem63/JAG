@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Days;
-use App\Http\ViewComposers\NavComposer;
 
 class DaysController extends Controller
 {
@@ -16,7 +15,7 @@ class DaysController extends Controller
 
     public function create()
     {
-        //
+
     }
 
     public function store(Request $request)
@@ -25,9 +24,9 @@ class DaysController extends Controller
         $newDays->day_id = $request->id;
         $newDays->save();
 
-//        return redirect()->route('days',[$request->id]);
         return back()->withInput();
     }
+
 //$id is the invite_id in invite Table which comes from account.blade
     public function show($id)
     {
@@ -38,16 +37,16 @@ class DaysController extends Controller
 
     public function edit($id)
     {
-//        dd($id);
+
     }
 
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     public function destroy($id)
     {
-        //
+
     }
 }
