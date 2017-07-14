@@ -1,10 +1,5 @@
 @extends('layouts.dashboard-dual')
 
-
-
-
-
-
 @section('leftcontent')
 
     <?php
@@ -16,87 +11,16 @@
     $APP_ID = '8CbYl4nKrSecxSBTNFzvhw';
     $APP_SECRET = 'rg1x7FX7TcOhbt9LyGlUnPXkp1ThnzKzfwwMLl1Jw7o29QtLD4W1pgxNE7pvCXSP';
 
-
-    //    $download = "";
-    //    $download = $_POST['download'];
-    //    if ($download != "") {
-    //        $darray = unserialize(base64_decode($download));
-    //        header('Content-type: application/vnd.ms-excel');
-    //        header('Content-disposition: attachment; filename="data.xls"');
-    //        foreach ($darray as $value) {
-    //            $value = str_replace("|DELIMITER|", "	", $value);
-    //            echo $value . "\n";
-    //        }
-    //        exit();
-    //    }
     $keywords = "";
     $location = "";
     $max = "0";
     $keywords = trim(strip_tags($_POST['keywords']));
     $location = trim(strip_tags($_POST['location']));
     $max = trim(strip_tags($_POST['max']));
-
     $mile = "";
     $mile = $_POST['mile'];
     if ($mile == "") $mile = "0";
     ?>
-
-    {{--<!doctype html>--}}
-    {{--<html lang="{{ app()->getLocale() }}">--}}
-    {{--<head>--}}
-    {{--<meta charset="utf-8">--}}
-    {{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
-    {{--Jquery--}}
-    {{--<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>--}}
-
-    <!-- CSRF Token -->
-    {{--<meta name=“csrf-token” content=“{{ csrf_token() }}“>--}}
-    {{--<meta charset="utf-8">--}}
-    {{--<title>Trvlrs Tool</title>--}}
-    {{--<link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>--}}
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">--}}
-    {{----}}
-    {{--</head>--}}
-
-    {{--<body>--}}
-
-    {{--<h2>Trvlrs Tool</h2>--}}
-
-    <form id="formSubmit" class="form-wrapper" action="/discovery" method="post"><input type="hidden" name="_token"
-                                                                                        value="<?php echo csrf_token(); ?>">
-        <strong>Search Within </strong>
-        <input type="radio" id="radio1" name="mile" value="1609" <?php if ($mile == "1609") echo "checked"; ?>>
-        <label for="radio1">1 Mile</label>
-        <input type="radio" id="radio2" name="mile" value="4828" <?php if ($mile == "4828") echo "checked"; ?>>
-        <label for="radio2">3 Miles</label>
-        <input type="radio" id="radio3" name="mile" value="8046" <?php if ($mile == "8046") echo "checked"; ?>>
-        <label for="radio3">5 Miles</label>
-        <input type="radio" id="radio4" name="mile" value="16093" <?php if ($mile == "16093") echo "checked"; ?>>
-        <label for="radio4">10 Miles</label>
-        <input type="radio" id="radio5" name="mile" value="40000" <?php if ($mile == "40000") echo "checked"; ?>>
-        <label for="radio5">25 Miles</label>
-        <input type="radio" id="radio6" name="mile" value="0" <?php if ($mile == "0") echo "checked"; ?>>
-        <label for="radio6">Max</label>
-
-        <input type="text" id="search" name="keywords"
-               <?php if ($keywords != "") echo 'value="' . $keywords . '"'; ?> placeholder="Search by business name, or keyword..."
-               required>
-        <input type="text" id="location" name="location"
-               <?php if ($location != "") echo 'value="' . $location . '"'; ?> placeholder="City, Address, ZIP Code, or Neighborhood..."
-               required>
-        <select name="max" id="select">
-            <optgroup label="Max Results">
-                <option value="0" <?php if ($max == "0") echo "selected"; ?>>50</option>
-                <option value="50" <?php if ($max == "50") echo "selected"; ?>>100</option>
-                <option value="200" <?php if ($max == "200") echo "selected"; ?>>250</option>
-                <option value="450" <?php if ($max == "450") echo "selected"; ?>>500</option>
-                <option value="950" <?php if ($max == "950") echo "selected"; ?>>1000</option>
-            </optgroup>
-        </select>
-        <input type="submit" value="go" class="go" id="submit">
-    </form>
-
 
     <div id="results">
         <?php
@@ -128,19 +52,6 @@
         $bearer_token = $body->access_token;
         ?>
         <div class="row"></div>
-        {{--<table width="100%" border="0" align="left" cellpadding="5" cellspacing="0" class="box"--}}
-        {{--style="color: #000000">--}}
-        {{--<tr>--}}
-        {{--<th width="5%" align="left" class="auto-style7">#</th>--}}
-        {{--<th width="10%" align="left" class="auto-style7">Image</th>--}}
-        {{--<th width="15%" align="left" class="auto-style7">Business Name</th>--}}
-        {{--<th width="35%" align="left" class="auto-style7">Address</th>--}}
-        {{--<th width="15%" align="left" class="auto-style7">Phone</th>--}}
-        {{--<th width="5%" align="left" class="auto-style7">Categories</th>--}}
-        {{--<th width="5%" align="left" class="auto-style7">Reviews</th>--}}
-        {{--<th width="5%" align="left" class="auto-style7">Rating</th>--}}
-        {{--<th width="5%" align="left" class="auto-style7">Closed</th>--}}
-        {{--</tr>--}}
         <?php
         $class = "row2";
         $sarray = array();
@@ -173,7 +84,6 @@
         $response = json_decode($response);
 
         foreach($response->businesses as $business){
-        //            if ($business->image_url != "") $image = "<a href='" . $business->image_url . "' target='_blank'><images border=0 height='100' width='100' src='" . str_replace("o.jpg", "ms.jpg", $business->image_url) . "' /></a>";
         $image = $business->image_url;
         $name = $business->name;
         $cla = $business->is_closed;
@@ -196,9 +106,6 @@
             $closed = "No";
         }
 
-
-
-        //            $class = ($class == "row2") ? "row1" : "row2";
         ?>
         <div class="col-sm-6">
             <div class="panel panel-default .discovery-result-panel">
@@ -212,27 +119,13 @@
         </div>
 
         <?php
-        //            $sarray[] = $name . "|DELIMITER|" . $address . "|DELIMITER|" . str_replace("-", " ", $phone) . "|DELIMITER|" . $reviews . "|DELIMITER|" . $rating . "|DELIMITER|" . $categories . "|DELIMITER|" . $closed . "|DELIMITER|" . $url;
-        //            $count++;
-        }
-
         }
         }
-        ?>
-        <tr align="center">
-            <td colspan="9"><p align="center" class="auto-style5">
-                <?php    echo '<center><form action="/discovery" method="POST"><input name="download" type="hidden" value="' . base64_encode(serialize($sarray)) . '" size="30"><input class="button" type="submit" value="Export Data"></form></center>'; ?>
-            </td>
-        </tr>
-        {{--</table>--}}
-        <?php
+        }
         }
         }
         ?>
     </div>
-
-    {{--</body>--}}
-    {{--</html>--}}
 
 @endsection
 
@@ -244,5 +137,7 @@
 
     </div>
 
-
 @endsection
+
+
+
