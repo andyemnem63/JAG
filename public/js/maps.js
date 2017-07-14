@@ -1,8 +1,6 @@
 
 
     $(document).ready(function () {
-
-
         $('.go').on('click', function () {
             alert('clicked');
             var addressArray = $('#location').val().trim();
