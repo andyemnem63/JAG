@@ -1,37 +1,30 @@
 <?php
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Discovery
-Route::get('/discovery', function () {
-    return view('pages.discovery');
-});
-Route::POST('/discovery', function () {
-    return view('pages.discovery');
-});
-// Twilio
-Route::get('/twilio', function () {
-    return view('pages.twilio');
-});
-
 Auth::routes();
 
-// Home
+// Handles rendering the welcome view.
+Route::get('/', function () { return view('welcome'); });
+
+// Handles rendering the home view.
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Handles rendering the discover view containing form.
+Route::get('/discover', function () { return view('pages.discover'); });
+
+// Handles rendering discovery view to display YELP results.
+Route::get('/discovery', function () { return view('pages.discovery'); });
+
+// Handles discover form post submission to conduct YELP API request.
+Route::post('/discovery', 'DiscoveryController@retrieveYelpResults');
+
+// Handles rendering twilio view.
+Route::get('/twilio', function () { return view('pages.twilio'); });
 
 // Invite
 Route::resource('/invite', 'InvitesController');
 
 // Trips
 Route::resource('/account', 'AccountController');
-
-// Discover
-Route::get('/discover', function () {
-    return view('pages.discover');
-});
 
 // Days
 Route::resource('/days', 'DaysController');
