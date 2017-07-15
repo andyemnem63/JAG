@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'trvlrs') }}</title>
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNfKjepbX3VkJFWOWG5TLmpNGdcaRrsHg&callback=initMap"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -37,7 +39,6 @@
 
 <!--Google Maps-->
 <script type="text/javascript" src="{{ URL::asset('js/maps.js') }}"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNfKjepbX3VkJFWOWG5TLmpNGdcaRrsHg&callback=initMap"></script>
+
 </body>
 </html>
