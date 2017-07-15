@@ -22,4 +22,23 @@
     @endfor
 @endsection
 
+@section('rightcontent')
+{{--Create Polls--}}
+    <form action="/days/{{$trip_id}}/polls" method="post" role="form">
+        <div class="form-group">
+            {{csrf_field()}}
+            <label for="">Create Poll</label>
+            <input type="text" class="form-control" name="createPoll">
+        </div>
+        <button type="submit" class="btn btn-primary">DONE</button>
+    </form>
+
+{{--Shows All Polls--}}
+    @foreach($allPolls as $polls)
+        <br>
+        <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}}</a>
+        <hr>
+    @endforeach
+@endsection
+
 

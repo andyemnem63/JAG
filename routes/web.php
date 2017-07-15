@@ -36,3 +36,7 @@ Route::get('/discover', function () {
 // Days
 Route::resource('/days', 'DaysController');
 
+//Polls
+Route::POST('/days/{id}/polls', 'PollsController@store');
+Route::get('/days/{tripId}/{pollId}/pollChoice', 'PollsController@index');
+
