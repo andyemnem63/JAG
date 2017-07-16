@@ -3,32 +3,101 @@
 @section('leftcontent')
     <div id="results">
         @foreach($businesses as $business)
-            <?php
-                $image = $business->image_url;
-                $name = $business->name;
+
+            @php
                 $cla = $business->is_closed;
-                $url = $business->url;
-                $title = "<a href='" . $url . "' target='_blank'>" . $name . "</a>";
                 $phone = $business->display_phone;
                 $reviews = $business->review_count;
-                $rating = $business->rating;
-                $address_array = $business->location->display_address;
-                $address = implode( PHP_EOL, $address_array);
-                $categories = "";
-            ?>
+                $address = implode(PHP_EOL, $business->location->display_address);
+            @endphp
+
             <div class="col-sm-6">
-                <div class="panel panel-default .discovery-result-panel">
-                    <div class="panel-heading"
-                         style="height: 200px;
-                                 background-image: url({{ $image }});
-                                 background-size: cover;
-                                 background-repeat: no-repeat;
-                                 border-color: rgba(255,255,255,0.0);">
+                <div class="panel panel-default result-card">
+
+                    <a href="{{$business->url}}">
+                        <div class="panel-heading result-card-head"
+                             style="background-image: url( {{ $business->image_url }} );">
+
+                            <div class="star-rating fa">
+                                @if ($business->rating === 5.0)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                @elseif ($business->rating === 4.5)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-half-o"></span>
+                                @elseif ($business->rating === 4.0)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 3.5)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-half-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 3.0)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 2.5)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-half-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 2.0)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 1.5)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-half-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 1.0)
+                                    <span class="fa-star"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @elseif ($business->rating === 0.5)
+                                    <span class="fa-star-half-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @else
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                    <span class="fa-star-o"></span>
+                                @endif
+                            </div>
+
+                            <div class="result-card-name">
+                                <h4 class="giveMeEllipsis"> {{ $business->name }} </h4>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="panel-body result-card-body">
+                        <h4 class="giveMeEllipsis"><i class="fa fa-map-o"></i>&nbsp;&nbsp;<?php echo $address?></h4>
                     </div>
-                    <h3 class="text-center"><?php echo $title ?></h3>
-                    <div class="panel-body">
-                        <h4><?php echo $address?></h4>
-                    </div>
+
                 </div>
             </div>
         @endforeach
