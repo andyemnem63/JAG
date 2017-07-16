@@ -1,14 +1,24 @@
 @extends('layouts.dashboard-dual')
 
+@php
+    // initialize an array to hold marker info for google maps
+    $markers =array();
+@endphp
+
 @section('leftcontent')
     <div id="results">
 
         @foreach($businesses as $business)
 
             @php
-                $cla = $business->is_closed;
-                $phone = $business->display_phone;
+                // combine all parts of address info together for easy view manipulation
                 $address = implode(PHP_EOL, $business->location->display_address);
+                // create an array of location information
+                $mapInfo = array($business->name,$business->coordinates->latitude,$business->coordinates->longitude,5);
+                // add array just created to the $markers array
+                array_push($markers,$mapInfo);
+               //$cla = $business->is_closed;
+               //$phone = $business->display_phone;
             @endphp
 
             <div class="col-sm-6">
@@ -108,25 +118,22 @@
 
 
 @section('rightcontent')
+
     {{--Div to house map--}}
     <div id="map-content"></div>
 
-
     {{--JS to generate map based on Yelp Api results--}}
     <script>
-        function initMap() {
+        // initialize map variable
+        var map;
 
-            var locations = [
-                ['Bondi Beach', -33.890542, 151.274856, 4],
-                ['Coogee Beach', -33.923036, 151.259052, 5],
-                ['Cronulla Beach', -34.028249, 151.157507, 3],
-                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                ['Maroubra Beach', -33.950198, 151.259302, 1]
-            ];
+        function initMap() {
+            // convert the PHP array into a javascript array
+            var locations = {!! json_encode($markers) !!};
 
             var map = new google.maps.Map(document.getElementById('map-content'), {
                 zoom: 10,
-                center: new google.maps.LatLng(-33.92, 151.25),
+                center: new google.maps.LatLng(28.53, -81.37),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
