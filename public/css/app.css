@@ -8483,10 +8483,24 @@ input[type="color"]:focus,
 }
 
 .star-rating {
-  color: gold;
   position: absolute;
-  bottom: 45px;
+  bottom: 41px;
+  width: 100%;
+  background: transparent;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  /* Standard syntax */
+}
+
+.star-rating p {
+  color: gold;
   padding: 0 15px;
+  position: relative;
+  bottom: -9px;
 }
 
 .nav-icon {

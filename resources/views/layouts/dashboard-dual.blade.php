@@ -32,7 +32,7 @@
             @yield('leftcontent')
         </div>
 
-        <div class="col-sm-5" id="right-column">
+        <div class="col-sm-4" id="right-column">
             <!-- put content for the right pane here -->
             @yield('rightcontent')
         </div>
