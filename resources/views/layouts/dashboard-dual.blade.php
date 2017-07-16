@@ -10,38 +10,39 @@
 
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
-
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://file.myfontastic.com/cmbgRkayBnHXSnPo8TJuHj/icons.css" rel="stylesheet">
+    <!--FontAwesome-->
+    <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
+
 </head>
+
 <body>
 <div id="app">
+    <div class="row">
 
-    <div class="container-fluid">
-        <div class="row">
+        <div class="col-sm-1">
+            <!-- side-navbar -->
             @include('inc.dash-side-nav')
-            <div class="col-sm-11">
-                <div class="row">
-                    <div class="col-sm-7" id="left-column">
-                        <!-- put content for the left pane here -->
-                        @yield('leftcontent')
-                    </div>
-
-                    <div class="col-sm-5" id="right-column">
-                        <!-- put content for the right pane here -->
-                        @yield('rightcontent')
-                    </div>
-                </div>
-            </div>
         </div>
+
+        <div class="col-sm-7" id="left-column">
+            <!-- put content for the left pane here -->
+            @yield('leftcontent')
+        </div>
+
+        <div class="col-sm-4" id="right-column">
+            <!-- put content for the right pane here -->
+            @yield('rightcontent')
+        </div>
+
     </div>
 </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
 <!--JQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!--Google Maps-->
