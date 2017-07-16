@@ -8384,6 +8384,11 @@ input[type="color"]:focus,
   margin: 10px 0 0 -15px;
 }
 
+#map-content {
+  height: 100vh;
+  position: fixed;
+}
+
 .discover-bg {
   background-image: url(/images/cityscape.jpg?db2cac117225d0a3466ab1209c26e9e2);
   height: 100vh;
@@ -8774,12 +8779,5 @@ input[type="color"]:focus,
     color: #ffffff;
     background-color: #3faae9;
   }
-}
-
-/*Map Styles*/
-
-#map-content {
-  width: 100%;
-  height: 100%;
 }
 
