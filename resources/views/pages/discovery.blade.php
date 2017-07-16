@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-dual')
+@extends('layouts.dashboard-discovery')
 
 @php
     // initialize an array to hold marker info for google maps
@@ -8,12 +8,15 @@
 @section('leftcontent')
     <div id="results">
 
+        <!-- Button trigger modal -->
+        {{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".card-modal">Small modal</button>--}}
+
         @foreach($businesses as $business)
 
             @php
                 // combine all parts of address info together for easy view manipulation
                 $address = implode(PHP_EOL, $business->location->display_address);
-                // create an array of location information
+                // create an array of location information - this is the key to making the map markers work!
                 $mapInfo = array($business->name,$business->coordinates->latitude,$business->coordinates->longitude,5);
                 // add array just created to the $markers array
                 array_push($markers,$mapInfo);
@@ -122,16 +125,25 @@
 
 @section('rightcontent')
 
+    <!-- modal -->
+    {{--<div class="modal fade card-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">--}}
+        {{--<div class="modal-dialog modal-lg" role="document" id="card-info-modal">--}}
+            {{--<div class="modal-content">--}}
+                {{--Here is where the detail info will be displayed.--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
     {{--Div to house map--}}
-    <div id="map-content"></div>
+    <div id="map-content" style="position: fixed; top: 0; right: 0;"></div>
 
     {{--JS to generate map based on Yelp Api results--}}
     <script>
         // initialize map variable
         var map;
-
+        // function wrapper
         function initMap() {
-            // convert the PHP array into a javascript array
+            // convert the PHP array into a JS array - this is the key to making this work in Laravel environment!!
             var locations = {!! json_encode($markers) !!};
 
             var map = new google.maps.Map(document.getElementById('map-content'), {
@@ -159,5 +171,9 @@
             }
         }
     </script>
+
+
+
+
 
 @endsection
