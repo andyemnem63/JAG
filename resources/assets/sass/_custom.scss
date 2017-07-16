@@ -129,7 +129,10 @@ input[type="color"]:focus,
 .result-card-body {
   padding: 5px 15px 0 15px;
   color: $brand-primary;
-
+}
+.result-card-body:hover {
+  background-color: rgba(69,187,255,0.1);
+  padding-bottom: 3px;
 }
 
 .star-rating {

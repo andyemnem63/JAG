@@ -24,7 +24,7 @@
             <div class="col-sm-6">
                 <div class="panel panel-default result-card">
 
-                    <a href="{{$business->url}}">
+                    <a href="{{$business->url}}" target="_blank">
                         <div class="panel-heading result-card-head"
                              style="background-image: url( {{ $business->image_url }} );">
                             <div class="star-rating">
@@ -102,12 +102,15 @@
                             <div class="result-card-name">
                                 <h4 class="giveMeEllipsis"> {{ $business->name }} </h4>
                             </div>
+
                         </div>
                     </a>
 
-                    <div class="panel-body result-card-body">
-                        <h4 class="giveMeEllipsis"><i class="fa fa-map-o"></i>&nbsp;&nbsp;<?php echo $address?></h4>
-                    </div>
+                    <a href="http://maps.google.com/?q={{ $address }}" target="_blank">
+                        <div class="panel-body result-card-body">
+                            <h4 class="giveMeEllipsis"><i class="fa fa-map-o"></i>&nbsp;&nbsp;{{ $address }} </h4>
+                        </div>
+                    </a>
 
                 </div>
             </div>

@@ -8487,6 +8487,11 @@ input[type="color"]:focus,
   color: #45bbff;
 }
 
+.result-card-body:hover {
+  background-color: rgba(69, 187, 255, 0.1);
+  padding-bottom: 3px;
+}
+
 .star-rating {
   position: absolute;
   bottom: 41px;
