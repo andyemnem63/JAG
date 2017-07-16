@@ -17,25 +17,26 @@
     <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
     {{--<!-- Latest compiled and minified JavaScript -->--}}
     {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>--}}
-
 </head>
 
 <body>
 <div id="app">
     <div class="row">
 
-        <div class="col-sm-1">
+        <div class="left-pane">
             <!-- side-navbar -->
             @include('inc.dash-side-nav')
         </div>
 
-        <div class="col-sm-7" id="left-column">
-            <!-- put content for the left pane here -->
+        <div class="center-pane">
+        {{--id="left-column"--}}
+        <!-- put content for the left pane here -->
             @yield('leftcontent')
         </div>
 
-        <div class="col-sm-4" id="right-column">
-            <!-- put content for the right pane here -->
+        <div class="right-pane">
+        {{--id="right-column"--}}
+        <!-- put content for the right pane here -->
             @yield('rightcontent')
         </div>
 

@@ -29,13 +29,14 @@ input[type="color"]:focus,
   outline: 0 none;
 }
 
-#results {
-  margin: 10px 0 0 -15px;
-}
+//#results {
+//  margin: 10px 0 0 -15px;
+//}
 
 #map-content {
   height: 100vh;
-  position: fixed;
+  //  position: fixed;
+  //  top: 0;
 }
 
 .discover-bg {
@@ -68,10 +69,6 @@ input[type="color"]:focus,
 
 }
 
-.discovery-result-panel > .panel-heading {
-  padding: 0 !important;
-}
-
 .giveMeEllipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -98,59 +95,135 @@ input[type="color"]:focus,
   top: -6px;
 }
 
-.result-card {
-  margin: 7px -7px;
-  height: 235px;
+@media (min-width: 768px) {
+
+  .left-pane {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 7%;
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  .center-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7.5%;
+    overflow-y: scroll;
+    width: 61%;
+    height: 100%;
+  }
+
+  .right-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: hidden;
+    width: 31.5%;
+    height: 100%;
+  }
+
+  .result-card {
+    margin: 7px -5px;
+    height: 235px;
+  }
+
+  .result-card-head {
+    height: 185px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    position: relative;
+    padding: 0;
+  }
+
+  .result-card-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0 15px;
+  }
+
+  .result-card-name:hover {
+    background-color: rgba(69, 187, 255, 0.70);
+  }
+
+  .result-card-body {
+    padding: 5px 15px 0 15px;
+    color: $brand-primary;
+  }
+
+  .result-card-body:hover {
+    background-color: rgba(69, 187, 255, 0.1);
+    padding-bottom: 3px;
+  }
+
+  .star-rating {
+    position: absolute;
+    bottom: 41px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.0); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* Standard syntax */
+  }
+
+  .star-rating p {
+    color: gold;
+    padding: 0 15px;
+    position: relative;
+    bottom: -9px;
+  }
 }
 
-.result-card-head {
-  height: 185px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: none;
-  position: relative;
-  padding: 0;
+@media (min-width: 992px) {
+  .left-pane {
+    width: 6%;
+  }
+
+  .center-pane {
+    left: 6.25%;
+    width: 61%;
+  }
+
+  .right-pane {
+    width: 32%;
+  }
 }
 
-.result-card-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: block;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 0 15px;
+@media (min-width: 1200px) {
+  .left-pane {
+    width: 5%;
+  }
+
+  .center-pane {
+    left: 6%;
+    width: 61%;
+  }
+
+  .right-pane {
+    width: 32%;
+  }
 }
 
-.result-card-name:hover {
-  background-color: rgba(69, 187, 255, 0.70);
+@media (min-width: 1400px) {
+  .center-pane {
+    left: 6%;
+    width: 61%;
+  }
 }
 
-.result-card-body {
-  padding: 5px 15px 0 15px;
-  color: $brand-primary;
+@media (min-width: 1600px) {
+  .center-pane {
+    left: 4.5%;
+    width: 62%;
+  }
 }
-.result-card-body:hover {
-  background-color: rgba(69,187,255,0.1);
-  padding-bottom: 3px;
-}
-
-.star-rating {
-  position: absolute;
-  bottom: 41px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.0); /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* Standard syntax */
-}
-
-.star-rating p {
-  color: gold;
-  padding: 0 15px;
-  position: relative;
-  bottom: -9px;
-}
-
-
