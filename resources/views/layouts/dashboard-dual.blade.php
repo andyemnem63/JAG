@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
-
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://file.myfontastic.com/cmbgRkayBnHXSnPo8TJuHj/icons.css" rel="stylesheet">

@@ -36,8 +36,13 @@
 @endsection
 
 @section('rightcontent')
+    <div id="map-content">
+
+
     <h2>Map Content</h2>
-    <div id="map-content"></div>
+
+
+    </div>
 @endsection
 
 
