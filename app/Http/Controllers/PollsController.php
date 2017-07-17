@@ -21,6 +21,7 @@ class PollsController extends Controller
     {
         $newPoll = new NewPoll;
         $newPoll->poll_message = $request->createPoll;
+        $newPoll->invite_id = $request->id;
         $newPoll->save();
 
         return back()->withInput();

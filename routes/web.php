@@ -9,13 +9,13 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Handles rendering the discover view containing form.
-Route::get('/discover', function () { return view('pages.discover'); });
+Route::get('/discover/{id}', 'DiscoveryController@index');
 
 // Handles rendering discovery view to display YELP results.
-Route::get('/discovery', function () { return view('pages.discovery'); });
+Route::get('/discovery/{id}', 'DiscoveryController@show');
 
 // Handles discover form post submission to conduct YELP API request.
-Route::post('/discovery', 'DiscoveryController@retrieveYelpResults');
+Route::post('/discovery/{id}', 'DiscoveryController@retrieveYelpResults');
 
 // Handles rendering twilio view.
 Route::get('/twilio', function () { return view('pages.twilio'); });

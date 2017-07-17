@@ -29,6 +29,7 @@
             {{csrf_field()}}
             <label for="">Create Poll</label>
             <input type="text" class="form-control" name="createPoll">
+            <input type="hidden" name="id" value={{$trip_id}}>
         </div>
         <button type="submit" class="btn btn-primary">DONE</button>
     </form>
@@ -36,8 +37,10 @@
 {{--Shows All Polls--}}
     @foreach($allPolls as $polls)
         <br>
-        <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}}</a>
-        <hr>
+        @if($polls->invite_id == $trip_id)
+            <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}}</a>
+            <br>
+        @endif
     @endforeach
 @endsection
 
