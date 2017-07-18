@@ -63,22 +63,4 @@ class DiscoveryController extends Controller
         return view('pages.discovery', compact('businesses'))
             ->with(['trip_id' => $id]);
     }
-
-//    public function invite($id)
-//    {
-//
-//        $allUsers = User::all();
-//        $allTrips = Trip::all();
-//        $currentUserId = Auth::id();
-//        $allInvites = Invite::all();
-//        $tripName = DB::select('select NAME FROM trips WHERE id=?', [$id]);
-//
-//        return view('pages.mainInvite', ['currentUserId' => $currentUserId])
-//            ->with(['tripName' => $tripName[0]->NAME])
-//            ->with(['trip_id' => $id])
-//            ->with(['allUsers' => $allUsers])
-//            ->with(['allInvites' => $allInvites])
-//            ->with(['allTrips' =>$allTrips]);
-//
-//    }
 }
