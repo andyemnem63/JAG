@@ -7,13 +7,18 @@ use GuzzleHttp\Client;
 
 class DiscoveryController extends Controller
 {
-    /**
-     * Make request the Yelp API
-     * https://www.yelp.com/developers/v3/manage_app
-     *
-     * @param Request $request
-     */
-    public function retrieveYelpResults(Request $request) {
+    public function index ($id) {
+
+        return view('pages.discover')->with(['trip_id' => $id]);
+
+    }
+
+    public function show ($id) {
+
+        return view('pages.discovery')->with(['trip_id' => $id]);
+
+    }
+    public function retrieveYelpResults(Request $request, $id) {
 
         // TODO: Possibly move all of this YELP API logic to a Yelp model.
 
@@ -55,6 +60,7 @@ class DiscoveryController extends Controller
         $business_response = json_decode($yelp_business_request->getBody());
         $businesses = $business_response->businesses;
 
-        return view('pages.discovery', compact('businesses'));
+        return view('pages.discovery', compact('businesses'))
+            ->with(['trip_id' => $id]);
     }
 }

@@ -37,7 +37,7 @@
     ?>
 
 
-    <form id="formSubmit" class="form-wrapper" action="/discovery" method="post"><input type="hidden"
+    <form id="formSubmit" class="form-wrapper" action="/discovery/{{$trip_id}}" method="post"><input type="hidden"
                                                                                         name="_token"
                                                                                         value="<?php echo csrf_token(); ?>">
         <div class="row">
