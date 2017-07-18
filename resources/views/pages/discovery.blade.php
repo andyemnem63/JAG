@@ -26,8 +26,8 @@
 
             <div class="col-sm-6">
                 <div class="panel panel-default result-card">
-
-                    <a href="{{$business->url}}" target="_blank">
+                    {{--<a href="{{$business->url}}" target="_blank">--}}
+                    <a data-toggle="modal" data-target="#myModal" class="card-info">
                         <div class="panel-heading result-card-head"
                              style="background-image: url( {{ $business->image_url }} );">
                             <div class="star-rating">
@@ -125,17 +125,29 @@
 
 @section('rightcontent')
 
-    <!-- modal -->
-    {{--<div class="modal fade card-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">--}}
-        {{--<div class="modal-dialog modal-lg" role="document" id="card-info-modal">--}}
-            {{--<div class="modal-content">--}}
-                {{--Here is where the detail info will be displayed.--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{--<div id="modal-spot" style="position: relative;">--}}
 
     {{--Div to house map--}}
-    <div id="map-content" style="position: fixed; top: 0; right: 0;"></div>
+    <div id="map-content" style="position: fixed; top: 0; right: 0;">
+
+    </div>
 
     {{--JS to generate map based on Yelp Api results--}}
     <script>
@@ -172,8 +184,9 @@
         }
     </script>
 
+    {{--JS to show modal within the right-pane--}}
+    <script>
 
-
-
+    </script>
 
 @endsection
