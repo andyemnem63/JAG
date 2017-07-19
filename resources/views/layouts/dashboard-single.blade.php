@@ -22,14 +22,18 @@
 </head>
 <body class="discover-bg">
 <div id="app">
+    <div class="row">
 
-    <div class="container-fluid">
-        <div class="row">
+        <div class="col-sm-1">
+            <!-- side-navbar -->
             @include('inc.dash-side-nav')
-            <div class="col-sm-11">
-                @yield('content')
-            </div>
         </div>
+
+        <div class="col-sm-11">
+            <!-- page content -->
+            @yield('content')
+        </div>
+
     </div>
 </div>
 

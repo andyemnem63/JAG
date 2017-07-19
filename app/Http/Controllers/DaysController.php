@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Days;
+use App\NewPoll;
 
 class DaysController extends Controller
 {
@@ -30,9 +31,11 @@ class DaysController extends Controller
 //$id is the invite_id in invite Table which comes from account.blade
     public function show($id)
     {
+        $allPolls = NewPoll::all();
         $allDays = Days::all();
         return view('pages.days', ['trip_id' => $id])
-                        ->with(['allDays' => $allDays]);
+                        ->with(['allDays' => $allDays])
+                        ->with(['allPolls' => $allPolls]);
     }
 
     public function edit($id)

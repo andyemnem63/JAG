@@ -31,6 +31,10 @@ Route::resource('/days', 'DaysController');
 
 //facebook login
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+//Polls
+Route::POST('/days/{id}/polls', 'PollsController@store');
+Route::get('/days/{tripId}/{pollId}/pollChoice', 'PollsController@index');
+
 
 //facebook login
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
