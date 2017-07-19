@@ -22,6 +22,13 @@
                                 class="glyphicon glyphicon-chevron-right"></i></button>
                 </a>
             @endif
+            <div class="form-group" style="margin-top:5px">
+        <!-- Facebook Button -->
+                <a class="btn btn-primary" href="{{ url('login/facebook') }}" id="btn-fblogin">
+                    <i class="fa fa-facebook"></i> Login with Facebook
+                </a>
+            </div>
+        </div>
 
         </div>
     </div>

@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://file.myfontastic.com/cmbgRkayBnHXSnPo8TJuHj/icons.css" rel="stylesheet">
     <!--FontAwesome-->
-    {{--<script src="https://use.fontawesome.com/8eb4ed0827.js"></script>--}}
+    <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
 </head>
 <body>
 <div id="app">

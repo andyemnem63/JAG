@@ -1,29 +1,21 @@
-@extends('layouts.dashboard-discovery')
-
-@php
-    // initialize an array to hold marker info for google maps
-    $markers =array();
-@endphp
+@extends('layouts.dashboard-dual')
 
 @section('leftcontent')
     <div id="results">
-
-        <!-- Button trigger modal -->
-        {{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".card-modal">Small modal</button>--}}
-
         @foreach($businesses as $business)
-
-            @php
-                // combine all parts of address info together for easy view manipulation
-                $address = implode(PHP_EOL, $business->location->display_address);
-                // create an array of location information - this is the key to making the map markers work!
-                $mapInfo = array($business->name,$business->coordinates->latitude,$business->coordinates->longitude,5);
-                // add array just created to the $markers array
-                array_push($markers,$mapInfo);
-               //$cla = $business->is_closed;
-               //$phone = $business->display_phone;
-            @endphp
-
+            <?php
+                $image = $business->image_url;
+                $name = $business->name;
+                $cla = $business->is_closed;
+                $url = $business->url;
+                $title = "<a href='" . $url . "' target='_blank'>" . $name . "</a>";
+                $phone = $business->display_phone;
+                $reviews = $business->review_count;
+                $rating = $business->rating;
+                $address_array = $business->location->display_address;
+                $address = implode( PHP_EOL, $address_array);
+                $categories = "";
+            ?>
             <div class="col-sm-6">
                 <div class="panel panel-default result-card">
                     {{--<a href="{{$business->url}}" target="_blank">--}}
@@ -121,9 +113,8 @@
     </div>
 @endsection
 
-
-
 @section('rightcontent')
+    <div id="map-content">
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -164,29 +155,17 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
-            var infowindow = new google.maps.InfoWindow();
 
-            var marker, i;
-
-            for (i = 0; i < locations.length; i++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                    return function () {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-            }
-        }
-    </script>
+    <h2>Map Content</h2>
 
     {{--JS to show modal within the right-pane--}}
     <script>
 
-    </script>
 
+    </div>
 @endsection
+
+
+
+
+
