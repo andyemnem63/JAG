@@ -14,13 +14,11 @@ function initMap() {
 
 $(document).ready(function () {
     $('.text-center').on('click', function () {
-        // event.preventDefault();
-        alert('clicked');
+         // event.preventDefault();
         var location = $('#location').val().trim();
         // Testing/Debugging //
         console.log('maps view click');
         $('#map-content').append('<div id="map">');
-        console.log('hello');
         // first example //
         var latLong = {lat: 28.455022, lng: -81.438414};
         var elevator;

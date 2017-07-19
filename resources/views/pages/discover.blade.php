@@ -99,7 +99,7 @@
         -->
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4 text-right">
-                    <button class="btn btn-lg btn-primary text-center">Submit</button>
+                    <button class="btn btn-lg btn-primary text-center" id="go">Submit</button>
                 </div>
             </div>
             {{--<input type="submit" value="go" id="submit">--}}

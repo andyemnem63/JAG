@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/splash.css') }}" rel="stylesheet">
+    <!--FontAwesome-->
+    <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
 
 </head>
 <body class="bg">

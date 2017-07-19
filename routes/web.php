@@ -29,3 +29,8 @@ Route::resource('/account', 'AccountController');
 // Days
 Route::resource('/days', 'DaysController');
 
+//facebook login
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+
+//facebook login
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
