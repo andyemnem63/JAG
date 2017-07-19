@@ -30,12 +30,6 @@
         @endif
     @endforeach
 
-    @foreach($allPolls as $polls)
-        @if($polls->id == $pollId)
-            <h3>Poll ID: {{$polls->id}}</h3>
-        @endif
-    @endforeach
-
     @foreach($pollResults as $results)
         @if($currentUserId == $results->user_id && $results->poll_id == $pollId)
             <h1>You Voted </h1>
@@ -49,6 +43,21 @@
         <input type="radio" name="result" value="no">No<br>
         <button type="submit" class="btn btn-primary">Done</button>
     </form>
+
+{{--Results --}}
+<h3>Results</h3>
+{{--Yes--}}
+<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$resultYes}}%;">
+        YES
+    </div>
+</div>
+{{--No--}}
+<div class="progress">
+    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$resultNo}}%;">
+        NO
+    </div>
+</div>
 @endsection
 
 

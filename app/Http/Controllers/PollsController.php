@@ -15,18 +15,38 @@ class PollsController extends Controller
 //Goes to Polls Page
     public function index($tripId, $pollId)
     {
+        $resultYes = "";
+        $resultNo = "";
         $allPolls = NewPoll::all();
         $allDays = Days::all();
         $pollResults = PollResults::all();
         $currentUserId = Auth::id();
         $currentUser = Auth::user()->name;
+            foreach($pollResults as $results) {
+                if($results->invite_id == $tripId && $pollId == $results->poll_id && $results->results == 1) {
+                    $resultYes+= 1;
+                }
+                elseif($results->invite_id == $tripId && $pollId == $results->poll_id && $results->results == 0) {
+                    $resultNo+= 1;
+                }
+            }
+            $total = $resultYes + $resultNo;
+            if($resultYes > 0) {
+                $resultYes = $resultYes/$total * 100;
+            }
+
+            if($resultNo > 0) {
+                $resultNo = $resultNo/$total * 100;
+            }
         return view('pages.pollResults', ['trip_id' => $tripId])
                     ->with(['allDays' => $allDays])
                     ->with(['allPolls' => $allPolls])
                     ->with(['pollId' => $pollId])
                     ->with(['currentUserId' => $currentUserId])
                     ->with(['pollResults' => $pollResults])
-                    ->with(['currentUser' => $currentUser]);
+                    ->with(['currentUser' => $currentUser])
+                    ->with(['resultYes' => $resultYes])
+                    ->with(['resultNo' => $resultNo]);
     }
 
 //Post New Poll to database
