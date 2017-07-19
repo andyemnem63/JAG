@@ -69,7 +69,6 @@ class InvitesController extends Controller
         $allTrips = Trip::all();
         $currentUserId = Auth::id();
         $allInvites = Invite::all();
-//        $tripName = DB::select('select NAME FROM trips WHERE id=?', [$currentUserId]);
         $tripName = DB::select('select NAME FROM trips WHERE id=?', [$id]);
 
         return view('pages.mainInvite', ['currentUserId' => $currentUserId])

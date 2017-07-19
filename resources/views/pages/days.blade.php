@@ -2,7 +2,7 @@
 
 @section('leftcontent')
 {{--Create Days--}}
-    <h1>Trip Id {{$trip_id}}</h1>
+    <h1>Welcome {{$currentUser}}</h1>
     <form action="/days" method="post" role="form">
         <legend>Create New Days</legend>
         <div class="form-group">
@@ -29,15 +29,17 @@
             {{csrf_field()}}
             <label for="">Create Poll</label>
             <input type="text" class="form-control" name="createPoll">
+            <input type="hidden" name="id" value={{$trip_id}}>
         </div>
         <button type="submit" class="btn btn-primary">DONE</button>
     </form>
 
 {{--Shows All Polls--}}
+    <h3>Polls</h3>
     @foreach($allPolls as $polls)
-        <br>
-        <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}}</a>
-        <hr>
+        @if($polls->invite_id == $trip_id)
+            <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}} {{$usersVoted}}/{{$totalUsers}}</a>
+        @endif
     @endforeach
 @endsection
 

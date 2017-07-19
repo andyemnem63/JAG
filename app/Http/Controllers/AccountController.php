@@ -24,10 +24,6 @@ class AccountController extends Controller
                     ->with(['allInvites' => $allInvites]);
     }
 
-    public function create()
-    {
-
-    }
 //Store to trip table and Invites Table
     public function store(Request $request)
     {
@@ -49,21 +45,6 @@ class AccountController extends Controller
         $inviteTable->save();
 
         return redirect()->route('account.index');
-    }
-
-    public function show($id)
-    {
-
-    }
-
-    public function edit($id)
-    {
-
-    }
-
-    public function update(Request $request, $id)
-    {
-
     }
 
 //Deletes trips from Trips table and Invites Table
