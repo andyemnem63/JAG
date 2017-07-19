@@ -41,6 +41,8 @@
             <a href="{{$trip_id}}/{{$polls->id}}/pollChoice" class="btn btn-default">{{$polls->poll_message}} {{$usersVoted}}/{{$totalUsers}}</a>
         @endif
     @endforeach
+
+
 @endsection
 
 
