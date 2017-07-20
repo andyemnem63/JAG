@@ -8354,6 +8354,10 @@ a {
   text-decoration: none !important;
 }
 
+h3.giveMeEllipsis {
+  margin-top: 10px;
+}
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -8374,6 +8378,29 @@ input[type="color"]:focus,
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(255, 255, 255, 0.6);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(255, 255, 255, 0.6);
   outline: 0 none;
+}
+
+#map-content {
+  height: 100vh;
+}
+
+.account-tile {
+  list-style: none;
+  border-top: 1px #cfdced solid;
+  padding: 1.5rem 0;
+  margin: 0 -30px;
+  font-size: 1.75rem;
+}
+
+.account-tile-title {
+  list-style: none;
+  padding: 1.5rem 0;
+  margin: 0 -30px;
+  font-size: 2rem;
+}
+
+.account-tile .tile-icon {
+  font-size: 2.25rem;
 }
 
 .discover-bg {
@@ -8412,6 +8439,15 @@ input[type="color"]:focus,
   color: rgba(255, 255, 255, 0.5);
 }
 
+.giveMeEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  /* number of lines to show */
+}
+
 .input-group-addon {
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.4);
@@ -8428,9 +8464,195 @@ input[type="color"]:focus,
   top: -6px;
 }
 
-.discovery-result-panel > .panel-heading {
-  padding: 0px !important;
+.tile-icon {
+  width: 40px;
+  text-align: center;
 }
+
+@media (min-width: 768px) {
+  .left-pane {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 7%;
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  .center-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7.5%;
+    overflow-y: scroll;
+    width: 61%;
+    height: 100%;
+  }
+
+  .right-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: hidden;
+    width: 31.5%;
+    height: 100%;
+  }
+
+  .result-card {
+    margin: 7px -5px;
+    height: 235px;
+  }
+
+  .result-card-head {
+    height: 185px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    position: relative;
+    padding: 0;
+  }
+
+  .result-card-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0 15px;
+  }
+
+  .result-card-name:hover {
+    background-color: rgba(69, 187, 255, 0.7);
+  }
+
+  .result-card-body {
+    padding: 5px 15px 0 15px;
+    color: #45bbff;
+  }
+
+  .result-card-body:hover {
+    background-color: rgba(69, 187, 255, 0.1);
+    padding-bottom: 3px;
+  }
+
+  .star-rating {
+    position: absolute;
+    bottom: 41px;
+    width: 100%;
+    background: transparent;
+    /* For browsers that do not support gradients */
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    /* Standard syntax */
+  }
+
+  .star-rating p {
+    color: gold;
+    padding: 0 15px;
+    position: relative;
+    bottom: -9px;
+  }
+}
+
+@media (min-width: 992px) {
+  .left-pane {
+    width: 6%;
+  }
+
+  .center-pane {
+    left: 6.25%;
+    width: 61%;
+  }
+
+  .right-pane {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .left-pane {
+    width: 5%;
+  }
+
+  .center-pane {
+    left: 6%;
+    width: 61%;
+  }
+
+  .right-pane {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .center-pane {
+    left: 6%;
+    width: 61%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .center-pane {
+    left: 4.5%;
+    width: 62%;
+  }
+}
+
+/* facebook button */
+
+.btn-facebook {
+  color: #FFFFFF;
+  background-color: #3B5998;
+  border-color: #fff;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open .dropdown-toggle.btn-facebook {
+  color: #FFFFFF;
+  background-color: #45BBFF;
+  border-color: #fff;
+}
+
+.btn-facebook:active,
+.btn-facebook.active,
+.open .dropdown-toggle.btn-facebook {
+  background-image: none;
+}
+
+.btn-facebook.disabled,
+.btn-facebook[disabled],
+fieldset[disabled] .btn-facebook,
+.btn-facebook.disabled:hover,
+.btn-facebook[disabled]:hover,
+fieldset[disabled] .btn-facebook:hover,
+.btn-facebook.disabled:focus,
+.btn-facebook[disabled]:focus,
+fieldset[disabled] .btn-facebook:focus,
+.btn-facebook.disabled:active,
+.btn-facebook[disabled]:active,
+fieldset[disabled] .btn-facebook:active,
+.btn-facebook.disabled.active,
+.btn-facebook[disabled].active,
+fieldset[disabled] .btn-facebook.active {
+  background-color: #3B5998;
+  border-color: #fff;
+}
+
+.btn-facebook .badge {
+  color: #3B5998;
+  background-color: #FFFFFF;
+}
+
+/* end facebook button */
 
 .nav-icon {
   font-size: 2.5rem;
@@ -8703,12 +8925,5 @@ input[type="color"]:focus,
     color: #ffffff;
     background-color: #3faae9;
   }
-}
-
-/*Map Styles*/
-
-#map {
-  width: 100vw;
-  height: 100vh;
 }
 

@@ -30,7 +30,7 @@ Route::resource('/account', 'AccountController');
 Route::resource('/days', 'DaysController');
 
 //facebook login
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 //Polls
 Route::POST('/days/{id}/polls', 'PollsController@store');
 Route::POST('/days/{tripId}/{pollId}/results', 'PollsController@resultsPost');

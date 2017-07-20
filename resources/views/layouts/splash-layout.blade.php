@@ -15,6 +15,25 @@
     <!--FontAwesome-->
     <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
 
+    <style>
+        /* facebook button */
+        .btn-facebook {
+            color: #FFFFFF;
+            background-color: #3B5998;
+            border-color: #fff;
+        }
+
+        .btn-facebook:hover,
+        .btn-facebook:focus,
+        .btn-facebook:active,
+        .btn-facebook.active,
+        .open .dropdown-toggle.btn-facebook {
+            color: #FFFFFF;
+            background-color: #45BBFF;
+            border-color: #fff;
+        }
+    </style>
+
 </head>
 <body class="bg">
 <div id="app">

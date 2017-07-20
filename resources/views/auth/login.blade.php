@@ -4,6 +4,7 @@
 @section('content')
 
     <div class="container">
+        <br><br>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
@@ -48,15 +49,24 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-block btn-primary">
-                                    Sign In
+                                    <strong>Sign In</strong>
                                 </button>
                                 <a class="btn btn-block btn-default" href="{{ route('password.request') }}">
-                                    Forgot password?
+                                    <strong>Forgot Password?</strong>
+                                </a>
+                                <br>
+                                    <div class="text-center">
+                                        <h6g>OR SIGN IN WITH</h6g>
+                                    </div>
+                                <br>
+                                <a class="btn btn-block btn-facebook" href="{{ url('login/facebook') }}" id="btn-fblogin">
+                                    <strong><i class="fa fa-facebook"></i>&nbsp;&nbsp;Facebook</strong>
                                 </a>
                                 <br>
                                 <div class="text-center">
-                                    <a href="{{ route('register') }}">
-                                        No Account? Sign Up for trvlrs
+                                    <a href="{{ route('register') }}"><strong>
+                                            No Account? Sign Up for trvlrs
+                                        </strong>
                                     </a>
                                 </div>
 
