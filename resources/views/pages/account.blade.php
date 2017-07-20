@@ -25,7 +25,7 @@
                             <div class="form-horizontal">
                                 <div class="row">
                                     <div class="col-sm-9 input-group-lg">
-                                        <input type="text" class="form-control" name="name" placeholder="Trip Name">
+                                        <input type="text" class="form-control" name="name" placeholder="Trip Name" required>
                                     </div>
                                     <div class="col-sm-2 input-group-lg">
                                         <button type="submit" class="btn btn-lg btn-primary"><strong><i

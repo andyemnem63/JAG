@@ -50,7 +50,8 @@ class LoginController extends Controller
 
             Auth::login($findUser);
 
-            return view('home');
+     return redirect('account');
+
 
         } else {
 
