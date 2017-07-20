@@ -8604,56 +8604,6 @@ input[type="color"]:focus,
   }
 }
 
-/* facebook button */
-
-.btn-facebook {
-  color: #FFFFFF;
-  background-color: #3B5998;
-  border-color: #fff;
-}
-
-.btn-facebook:hover,
-.btn-facebook:focus,
-.btn-facebook:active,
-.btn-facebook.active,
-.open .dropdown-toggle.btn-facebook {
-  color: #FFFFFF;
-  background-color: #45BBFF;
-  border-color: #fff;
-}
-
-.btn-facebook:active,
-.btn-facebook.active,
-.open .dropdown-toggle.btn-facebook {
-  background-image: none;
-}
-
-.btn-facebook.disabled,
-.btn-facebook[disabled],
-fieldset[disabled] .btn-facebook,
-.btn-facebook.disabled:hover,
-.btn-facebook[disabled]:hover,
-fieldset[disabled] .btn-facebook:hover,
-.btn-facebook.disabled:focus,
-.btn-facebook[disabled]:focus,
-fieldset[disabled] .btn-facebook:focus,
-.btn-facebook.disabled:active,
-.btn-facebook[disabled]:active,
-fieldset[disabled] .btn-facebook:active,
-.btn-facebook.disabled.active,
-.btn-facebook[disabled].active,
-fieldset[disabled] .btn-facebook.active {
-  background-color: #3B5998;
-  border-color: #fff;
-}
-
-.btn-facebook .badge {
-  color: #3B5998;
-  background-color: #FFFFFF;
-}
-
-/* end facebook button */
-
 .nav-icon {
   font-size: 2.5rem;
 }
