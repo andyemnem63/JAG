@@ -8396,7 +8396,7 @@ input[type="color"]:focus,
   list-style: none;
   padding: 1.5rem 0;
   margin: 0 -30px;
-  font-size: 2rem;
+  font-size: 1.9rem;
 }
 
 .account-tile .tile-icon {
@@ -8437,6 +8437,10 @@ input[type="color"]:focus,
 .discover-input .discover-input :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: rgba(255, 255, 255, 0.5);
+}
+
+.fb-profilepic {
+  height: 45px;
 }
 
 .giveMeEllipsis {

@@ -6,7 +6,9 @@
         <div class="row">
             <div class="col-sm-2">
                 <ul>
-                    <li class="account-tile-title"><strong>Your Account</strong></li>
+                    <li class="account-tile-title">
+                        <img src="https://graph.facebook.com/10106820307700542/picture?type=large" alt=""
+                             class="img-circle fb-profilepic"><strong>&nbsp;&nbsp;Your Account</strong></li>
                     <li class="account-tile"><span class="fa fa-map-marker tile-icon"></span><strong>Trips</strong></li>
                     <li class="account-tile"><span class="fa fa-user-circle-o tile-icon"></span><strong>Profile</strong>
                     </li>
@@ -17,6 +19,7 @@
             <div class="col-sm-10">
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <div style="padding:0 50px;">
 
                         <h1>Your Trips</h1>
                         {{--Creates New Trip--}}
@@ -25,7 +28,8 @@
                             <div class="form-horizontal">
                                 <div class="row">
                                     <div class="col-sm-9 input-group-lg">
-                                        <input type="text" class="form-control" name="name" placeholder="Trip Name" required>
+                                        <input type="text" class="form-control" name="name" placeholder="Trip Name"
+                                               required>
                                     </div>
                                     <div class="col-sm-2 input-group-lg">
                                         <button type="submit" class="btn btn-lg btn-primary"><strong><i
@@ -35,6 +39,7 @@
                                 </div>
                             </div>
                         </form>
+                        </di                                                                                                                                                                                                                         v>
 
 
                         {{--Trips--}}
@@ -75,25 +80,9 @@
                         </div>
 
                     </div>
-
+                </div>
             </div>
         </div>
-            <div class="img-circle">
-                <style>.img-circle {
-
-                        float: right;
-                    }</style>
-                <div id="ember1422"
-                     style="background-image: url(&quot;https://graph.facebook.com/10106820307700542/picture?type=large&quot;);"
-                     class="ember-view image-uploader is-enabled">
-                    <div class="drop-message primary-drop dz-clickable"><span class="drop-message-small">Click or drop image here to upload</span>
-                        <span class="drop-message-small">Edit</span></div>
-                    <div class="drop-message-hint">Edit</div>
-                </div>
-                <div class="big-input-row">
-                    <div class="big-input-wrap"><label>Your Photo</label></div>
-                </div>
-            </div>
     </div>
 
 @endsection
