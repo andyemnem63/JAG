@@ -20,7 +20,6 @@ function userSearch() {
 // When One of the links is clicked add it to the input form
 $(function() {
     $('li a').click(function(event) {
-        event.preventDefault();
         var value = $(this).text();
         var input = $('#myInput');
         input.val(' ');

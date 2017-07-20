@@ -50,7 +50,7 @@ class LoginController extends Controller
 
             Auth::login($findUser);
 
-     return redirect('account');
+     return redirect('/account');
 
 
         } else {
@@ -69,7 +69,7 @@ class LoginController extends Controller
 
             Auth::login($user);
 
-            return view ('home');
+            return redirect ('/account');
 
         }
     }
