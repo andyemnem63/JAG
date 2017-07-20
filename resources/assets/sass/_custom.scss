@@ -29,14 +29,27 @@ input[type="color"]:focus,
   outline: 0 none;
 }
 
-//#results {
-//  margin: 10px 0 0 -15px;
-//}
-
 #map-content {
   height: 100vh;
-  //  position: fixed;
-  //  top: 0;
+}
+
+.account-tile {
+  list-style: none;
+  border-top: 1px $laravel-border-color solid;
+  padding: 1.5rem 0;
+  margin: 0 -30px;
+  font-size: 1.75rem;
+}
+
+.account-tile-title {
+  list-style: none;
+  padding: 1.5rem 0;
+  margin: 0 -30px;
+  font-size: 2rem;
+}
+
+.account-tile .tile-icon {
+  font-size: 2.25rem;
 }
 
 .discover-bg {
@@ -93,6 +106,11 @@ input[type="color"]:focus,
   color: #ffffff;
   position: relative;
   top: -6px;
+}
+
+.tile-icon {
+  width: 40px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -182,6 +200,7 @@ input[type="color"]:focus,
     position: relative;
     bottom: -9px;
   }
+
 }
 
 @media (min-width: 992px) {
@@ -227,5 +246,6 @@ input[type="color"]:focus,
     width: 62%;
   }
 }
+
 
 //-----------TESTING--------------//
