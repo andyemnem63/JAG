@@ -75,9 +75,25 @@
                         </div>
 
                     </div>
-                </div>
+
             </div>
         </div>
+            <div class="img-circle">
+                <style>.img-circle {
+
+                        float: right;
+                    }</style>
+                <div id="ember1422"
+                     style="background-image: url(&quot;https://graph.facebook.com/10106820307700542/picture?type=large&quot;);"
+                     class="ember-view image-uploader is-enabled">
+                    <div class="drop-message primary-drop dz-clickable"><span class="drop-message-small">Click or drop image here to upload</span>
+                        <span class="drop-message-small">Edit</span></div>
+                    <div class="drop-message-hint">Edit</div>
+                </div>
+                <div class="big-input-row">
+                    <div class="big-input-wrap"><label>Your Photo</label></div>
+                </div>
+            </div>
     </div>
 
 @endsection
