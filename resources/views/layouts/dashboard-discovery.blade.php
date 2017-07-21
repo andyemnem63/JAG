@@ -16,7 +16,15 @@
     <!--FontAwesome-->
     <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
     {{--<!-- Latest compiled and minified JavaScript -->--}}
-    {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>--}}
+
+    <style>
+    /*.modal-content{*/
+        /*width: 33%;*/
+        /*position: absolute;*/
+        /*right: 0;*/
+    /*}*/
+    </style>
+
 </head>
 
 <body>
