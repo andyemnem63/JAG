@@ -58,9 +58,13 @@ class DiscoveryController extends Controller
         ]);
 
         $business_response = json_decode($yelp_business_request->getBody());
+        $long = $business_response->businesses[0]->coordinates->longitude;
+        $lat = $business_response->businesses[0]->coordinates->latitude;
         $businesses = $business_response->businesses;
 
         return view('pages.discovery', compact('businesses'))
-            ->with(['trip_id' => $id]);
+            ->with(['trip_id' => $id])
+            ->with(['lat' => $lat])
+            ->with(['long' => $long]);
     }
 }
