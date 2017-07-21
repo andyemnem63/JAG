@@ -14,9 +14,10 @@
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.0.1",
     "jquery": "^3.1.1",
-    "laravel-mix": "^1.0",
+    "laravel-mix": "^1.2.2",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "vue": "^2.4.2",
+    "vue-template-compiler": "^2.4.2"
   },
   "dependencies": {
     "ember-file-upload": "^2.1.1"

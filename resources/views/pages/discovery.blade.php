@@ -3,6 +3,7 @@
 @php
     // initialize an array to hold marker info for google maps
     $markers =array();
+    $count=1;
 @endphp
 
 @section('leftcontent')
@@ -26,8 +27,7 @@
 
             <div class="col-sm-6">
                 <div class="panel panel-default result-card">
-                    {{--<a href="{{$business->url}}" target="_blank">--}}
-                    <a data-toggle="modal" data-target="#myModal" class="card-info">
+                    <a data-toggle="modal" data-target="#Modal{{$count}}" class="card-info">
                         <div class="panel-heading result-card-head"
                              style="background-image: url( {{ $business->image_url }} );">
                             <div class="star-rating">
@@ -117,6 +117,36 @@
 
                 </div>
             </div>
+
+            <!-- Business's Modal -->
+            <div class="modal fade" id="Modal{{$count}}" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header result-card-head" style="background-image: url( {{ $business->image_url }} );">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-activity-title">{{$business->name}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$address}}</p>
+                            <a href="{{$business->url}}"><button class="btn btn-sm">Website</button></a>
+                            <p>{{$business->rating}}</>
+                            <p>{{$business->display_phone}}</p>
+                            <p>{{$business->is_closed}}</p>
+                            @if ($business->price != null)
+                                <p>{{$business->price}}</p>
+                            @endif
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @php
+                $count=$count +1;
+            @endphp
+
         @endforeach
     </div>
 @endsection
@@ -124,25 +154,6 @@
 
 
 @section('rightcontent')
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{--<div id="modal-spot" style="position: relative;">--}}
 
     {{--Div to house map--}}
     <div id="map-content" style="position: fixed; top: 0; right: 0;">
@@ -182,11 +193,6 @@
                 })(marker, i));
             }
         }
-    </script>
-
-    {{--JS to show modal within the right-pane--}}
-    <script>
-
     </script>
 
 @endsection
