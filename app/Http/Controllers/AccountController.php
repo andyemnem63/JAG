@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Trip;
 use App\Invite;
 use Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class AccountController extends Controller
 {
@@ -22,6 +23,7 @@ class AccountController extends Controller
         return view('pages.account', ['allTrips' => $allTrips])
                     ->with(['currentUserId' => $currentUserId])
                     ->with(['allInvites' => $allInvites]);
+
     }
 
 //Store to trip table and Invites Table

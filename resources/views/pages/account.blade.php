@@ -7,7 +7,7 @@
             <div class="col-sm-2">
                 <ul>
                     <li class="account-tile-title">
-                        <img src="https://graph.facebook.com/10106820307700542/picture?type=large" alt=""
+                        <img src="{{ Auth::user()->avatar }}" alt="Facebook Avatar"
                              class="img-circle fb-profilepic"><strong>&nbsp;&nbsp;Your Account</strong></li>
                     <li class="account-tile"><span class="fa fa-map-marker tile-icon"></span><strong>Trips</strong></li>
                     <li class="account-tile"><span class="fa fa-user-circle-o tile-icon"></span><strong>Profile</strong>
