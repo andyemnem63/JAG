@@ -171,7 +171,7 @@
 
             var map = new google.maps.Map(document.getElementById('map-content'), {
                 zoom: 10,
-                center: new google.maps.LatLng(28.53, -81.37),
+                center: new google.maps.LatLng({{$lat}}, {{$long}}),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
