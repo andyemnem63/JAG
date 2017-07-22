@@ -12,14 +12,26 @@
         <button type="submit" class="btn btn-primary">New Days</button>
     </form>
 
+{{--Display Activity--}}
+<div class="activity text-center">
+    @foreach($act as $activity)
+        <div>
+            <h4>{{$activity->activity_name}}</h4>
+            <img style="width: 50px;" src="{{$activity->imgUrl}}" alt="No Image Available">
+            <a href="{{$activity->url}}">WebSite</a>
+        </div>
+    @endforeach
+</div>
+
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
     @for($i=0; $i < count($allDays); $i++)
         @if($allDays[$i]->day_id== $trip_id)
-            <h3>Day {{$dayCount++}}</h3>
-            <hr><br>
+            <a href="/days/{{$trip_id}}/days/{{$dayCount}}"><h3>Day {{$dayCount++}}</h3></a>
         @endif
     @endfor
+
+
 @endsection
 
 @section('rightcontent')
