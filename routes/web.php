@@ -27,15 +27,19 @@ Route::resource('/invite', 'InvitesController');
 Route::resource('/account', 'AccountController');
 
 // Days
-Route::resource('/days', 'DaysController');
+//Route::resource('/days', 'DaysController');
+Route::POST('/days', 'DaysController@store');
+Route::get('/days/{id}', 'DaysController@show');
+Route::get('/days/{id}/days/{day_id}', 'DaysController@actDay');
 
-//facebook login
-Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 //Polls
 Route::POST('/days/{id}/polls', 'PollsController@store');
 Route::POST('/days/{tripId}/{pollId}/results', 'PollsController@resultsPost');
 Route::get('/days/{tripId}/{pollId}/pollChoice', 'PollsController@index');
 
+//Activity
+Route::POST('/discovery/{id}/activity', 'ActivityController@post');
 
 //facebook login
+Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

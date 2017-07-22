@@ -127,14 +127,24 @@
                             <h4 class="modal-activity-title">{{$business->name}}</h4>
                         </div>
                         <div class="modal-body">
+                    {{--Add activity to Act table--}}
+                            <form action="/discovery/{{$trip_id}}/activity" method="post" role="form">
+                                {{csrf_field()}}
+                                <input type="hidden" name="activity_name" value={{$business->name}}>
+                                <input type="hidden" name="url" value={{$business->url}}>
+                                <input type="hidden" name="imgUrl" value={{$business->image_url}}>
+                                <input type="hidden" name="address" value={{$address}}>
+                                <button type="submit" class="btn btn-primary">Add to Dashboard</button>
+                            </form>
+
                             <p>{{$address}}</p>
                             <a href="{{$business->url}}"><button class="btn btn-sm">Website</button></a>
-                            <p>{{$business->rating}}</>
+                            <p>{{$business->rating}}<p/>
                             <p>{{$business->display_phone}}</p>
                             <p>{{$business->is_closed}}</p>
-                            @if ($business->price != null)
-                                <p>{{$business->price}}</p>
-                            @endif
+                            {{--@if ($business->price != null)--}}
+                                {{--<p>{{$business->price}}</p>--}}
+                            {{--@endif--}}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

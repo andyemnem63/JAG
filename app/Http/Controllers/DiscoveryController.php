@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use App\Days;
 
 class DiscoveryController extends Controller
 {
+
+//Discover page with search page
     public function index ($id) {
 
         return view('pages.discover')->with(['trip_id' => $id]);
@@ -14,12 +17,12 @@ class DiscoveryController extends Controller
     }
 
     public function show ($id) {
-
         return view('pages.discovery')->with(['trip_id' => $id]);
 
     }
-    public function retrieveYelpResults(Request $request, $id) {
 
+    public function retrieveYelpResults(Request $request, $id) {
+        $allDays = Days::all();
         // TODO: Possibly move all of this YELP API logic to a Yelp model.
 
         $YELP_APP_ID = env( 'YELP_APP_ID');
@@ -65,6 +68,7 @@ class DiscoveryController extends Controller
         return view('pages.discovery', compact('businesses'))
             ->with(['trip_id' => $id])
             ->with(['lat' => $lat])
+            ->with(['allDays' => $allDays])
             ->with(['long' => $long]);
     }
 }

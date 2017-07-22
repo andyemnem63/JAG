@@ -8,10 +8,14 @@ use App\NewPoll;
 use App\PollResults;
 use App\Invite;
 use Auth;
+use App\Act;
 use Illuminate\Validation\Rules\In;
 
 class DaysController extends Controller
 {
+    public function actDay($id, $days_id) {
+        dd('working');
+    }
 
     public function store(Request $request)
     {
@@ -25,20 +29,23 @@ class DaysController extends Controller
 //$id is the invite_id in invite Table which comes from account.blade
     public function show($id)
     {
+    // Variables
         $totalUsers = 0;
         $usersVoted = 0;
+    // Get from database
+        $act = Act::all();
         $inviteTable = Invite::all();
-        $currentUser = Auth::user()->name;
         $allPolls = NewPoll::all();
-        $pollResults = PollResults::all();
         $allDays = Days::all();
-//    Show total amount of users
+        $pollResults = PollResults::all();
+        $currentUser = Auth::user()->name;
+    // Show total amount of users
         foreach($inviteTable as $invite) {
             if($invite->invite_id == $id) {
                 $totalUsers+= 1;
             }
         }
-//    Show Users that voted
+    // Show Users that voted
         foreach ($pollResults as $results) {
             if($results->invite_id == $id)
                 $usersVoted+= 1;
@@ -48,6 +55,8 @@ class DaysController extends Controller
                         ->with(['allPolls' => $allPolls])
                         ->with(['currentUser' => $currentUser])
                         ->with(['totalUsers' => $totalUsers])
-                        ->with(['usersVoted' => $usersVoted]);
+                        ->with(['usersVoted' => $usersVoted])
+                        ->with(['act' => $act]);
+
     }
 }

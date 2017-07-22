@@ -16,7 +16,7 @@ class AddFacebookIdToUsers extends Migration
         //
 
         Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->Nullable()->after('password');
+            $table->string('avatar')->nullable()->after('password');
         });
 
     }
