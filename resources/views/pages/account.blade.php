@@ -4,6 +4,7 @@
 
     <div class="container">
         <div class="row">
+            {{--Account Page Options--}}
             <div class="col-sm-2">
                 <ul>
                     <li class="account-tile-title">
@@ -16,14 +17,13 @@
                     </li>
                 </ul>
             </div>
+            {{--Trips Panel--}}
             <div class="col-sm-10">
-                <div class="panel panel-default">
+                <div class="panel panel-default account-trips">
                     <div class="panel-body">
-                        <div style="padding:0 50px;">
-
                         <h1>Your Trips</h1>
                         {{--Creates New Trip--}}
-                        <form action="{{route('account.store')}}" method="post" role="form">
+                        <form action="{{route('account.store')}}" method="post" role="form" style="margin-bottom: 20px;">
                             {{csrf_field()}}
                             <div class="form-horizontal">
                                 <div class="row">
@@ -39,46 +39,33 @@
                                 </div>
                             </div>
                         </form>
-                        </di                                                                                                                                                                                                                         v>
-
 
                         {{--Trips--}}
-                        <div class="trips">
-                            <div class="row">
-                                @foreach($allInvites as $invites)
-                                    {{--If the Current user id is equal to the user id .....--}}
-                                    @if($currentUserId == $invites->user_id)
-                                        <hr>
-                                        <div class="col-sm-6">
-                                            {{--Display trips that links to Uri with their invite id--}}
-                                            <h4 style="display: inline"><strong>{{$invites->trip_name}}</strong></h4>
-                                        </div>
-                                        <div class="col-sm-6 text-right">
+                        @foreach($allInvites as $invites)
+                            {{--If the Current user id is equal to the user id .....--}}
+                            @if($currentUserId == $invites->user_id)
+                                <div class="row">
+                                    <hr style="margin: 0 -15px;">
+                                    <div class="col-sm-6" style="margin: 15px 0;">
+                                        <h4><strong>{{$invites->trip_name}}</strong></h4>
+                                    </div>
+                                    <div class="col-sm-6 text-right" style="margin: 15px 0;">
+                                        <form action="/account/{{$invites->invite_id}}" method="post" role="form"
+                                              style="display:inline; margin-right: 10px">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-default"><strong>Cancel</strong></button>
+                                        </form>
 
-                                            {{--<span class="pull-right" style="position: relative; bottom: 7px;">--}}
-                                            {{--<span class="" style="">--}}
-
-                                            {{--Delete Trip--}}
-                                            <form action="/account/{{$invites->invite_id}}" method="post" role="form"
-                                                  style="position: relative; bottom: 7px;">
-                                                {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button class="btn btn-default"><strong>Cancel</strong></button>
-                                            </form>
-
-                                            {{--Goes to days page--}}
-                                            <a href="/days/{{$invites->invite_id}}">
-                                                <button class="btn btn-primary"><strong>View <i
-                                                                class="glyphicon glyphicon-chevron-right"></i></strong>
-                                                </button>
-                                            </a>
-                                        </div>
-
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-
+                                        <a href="/days/{{$invites->invite_id}}">
+                                            <button class="btn btn-primary" style="display:inline"><strong>View <i
+                                                            class="glyphicon glyphicon-chevron-right"></i></strong>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

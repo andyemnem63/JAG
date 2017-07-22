@@ -23,6 +23,8 @@
         /*position: absolute;*/
         /*right: 0;*/
     /*}*/
+
+    /*.modal-content*/
     </style>
 
 </head>
