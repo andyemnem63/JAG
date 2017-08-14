@@ -17,7 +17,7 @@
     @foreach($act as $activity)
         <div>
             <h4>{{$activity->activity_name}}</h4>
-            <img style="width: 50px;" src="{{$activity->imgUrl}}" alt="No Image Available">
+            <img style="width: 200px; height: 200px;" src="{{$activity->imgUrl}}" alt="No Image Available">
             <a href="{{$activity->url}}">See Yelp Reviews</a>
         </div>
     @endforeach
