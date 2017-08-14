@@ -13,7 +13,7 @@
     </form>
 
 {{--Display Activity--}}
-{{--<div class="activity text-center">
+<div class="activity text-center">
     @foreach($act as $activity)
         <div>
 
@@ -22,106 +22,7 @@
             <a href="{{$activity->url}}" target="_blank">See Yelp Reviews</a>
         </div>
     @endforeach
-</div>--}}
-
-@php
-    $count=1;
-@endphp
-
-<div class="col-sm-6">
-    <div class="panel panel-default result-card">
-        @foreach($businesses as $business)
-        <a data-toggle="modal" data-target="#Modal{{$count}}" class="card-info">
-            <div class="panel-heading result-card-head"
-                 style="background-image: url( {{ $business->image_url }} );">
-                <div class="star-rating">
-                    <p class="fa">
-                        @if ($business->rating === 5.0)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                        @elseif ($business->rating === 4.5)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-half-o"></span>
-                        @elseif ($business->rating === 4.0)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 3.5)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-half-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 3.0)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 2.5)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-half-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 2.0)
-                            <span class="fa-star"></span>
-                            <span class="fa-star"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 1.5)
-                            <span class="fa-star"></span>
-                            <span class="fa-star-half-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 1.0)
-                            <span class="fa-star"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @elseif ($business->rating === 0.5)
-                            <span class="fa-star-half-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @else
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                            <span class="fa-star-o"></span>
-                        @endif
-                    </p>
-                </div>
-
-                <div class="result-card-name">
-                    <h4 class="giveMeEllipsis"> {{ $business->name }} </h4>
-                </div>
-
-            </div>
-        </a>
-
-        <a href="http://maps.google.com/?q={{ $address }}" target="_blank">
-            <div class="panel-body result-card-body">
-                <h4 class="giveMeEllipsis"><i class="fa fa-map-o"></i>&nbsp;&nbsp;{{ $address }} </h4>
-            </div>
-        </a>
-
-    </div>
 </div>
-@endforeach
 
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
