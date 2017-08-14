@@ -18,7 +18,7 @@
         <div>
             <h4>{{$activity->activity_name}}</h4>
             <img style="width: 50px;" src="{{$activity->imgUrl}}" alt="No Image Available">
-            <a href="{{$activity->url}}">WebSite</a>
+            <a href="{{$activity->url}}">{{$activity->url}}</a>
         </div>
     @endforeach
 </div>
