@@ -16,7 +16,7 @@ class ActivityController extends Controller
         $activityTable->address = $request->address;
         $activityTable->save();
 
-//        return back()->withInput();
+       return redirect('/account');
 
     }
 
