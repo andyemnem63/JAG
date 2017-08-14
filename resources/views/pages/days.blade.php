@@ -19,7 +19,7 @@
 
             <h4>{{$activity->activity_name}}</h4>
             <img style="width: 200px; height: 125px;" src="{{$activity->imgUrl}}" alt="No Image Available">
-            <a href="{{$activity->url}}">See Yelp Reviews</a>
+            <a href="{{$activity->url}}" target="_blank">See Yelp Reviews</a>
         </div>
     @endforeach
 </div>
