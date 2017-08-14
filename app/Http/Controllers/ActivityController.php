@@ -16,7 +16,7 @@ class ActivityController extends Controller
         $activityTable->address = $request->address;
         $activityTable->save();
 
-       return redirect ('pages.days')->with(['trip_id' => $id]);
+       return redirect ('pages.days');
 
     }
 
