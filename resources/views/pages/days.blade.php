@@ -16,11 +16,8 @@
 <div class="activity text-center">
     @foreach($act as $activity)
         <div>
-            @php
 
-            $activity_name = explode(" ", $activity);
-            @endphp
-            <h4>{{$activity_name}}</h4>
+            <h4>{{$activity->activity_name}}</h4>
             <img style="width: 200px; height: 125px;" src="{{$activity->imgUrl}}" alt="No Image Available">
             <a href="{{$activity->url}}">See Yelp Reviews</a>
         </div>
