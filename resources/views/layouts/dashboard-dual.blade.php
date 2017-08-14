@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="https://file.myfontastic.com/cmbgRkayBnHXSnPo8TJuHj/icons.css" rel="stylesheet">
     <!--FontAwesome-->
     <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
@@ -43,7 +43,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ secure_asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
 <!--JQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

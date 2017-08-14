@@ -5,7 +5,7 @@
 
     <div class="container">
         <div class="row text-center">
-            <img src="{{ asset('images/trvlrs-logo.svg') }}" alt="trvlrs logo" class="welcome-logo">
+            <img src="{{ secure_asset('images/trvlrs-logo.svg') }}" alt="trvlrs logo" class="welcome-logo">
         </div>
         <div class="text-center blanco">
             <h1>Plan an awesome trip together.</h1>

@@ -13,7 +13,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/trvlrs-logo.svg') }}" alt="trvlrs logo" height="33px">
+                <img src="{{ secure_asset('images/trvlrs-logo.svg') }}" alt="trvlrs logo" height="33px">
             </a>
         </div>
 

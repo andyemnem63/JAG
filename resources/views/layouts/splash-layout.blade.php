@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/splash.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/splash.css') }}" rel="stylesheet">
     <!--FontAwesome-->
     <script src="https://use.fontawesome.com/8eb4ed0827.js"></script>
 
@@ -42,6 +42,6 @@
 </div>
 </body>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ secure_asset('js/app.js') }}"></script>
 </body>
 </html>

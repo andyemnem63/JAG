@@ -60,7 +60,7 @@ if($_POST){
     <title>Trvlrs Text</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{secure_asset('css/app.css')}}">
 
     <script type="text/javascript">
 
