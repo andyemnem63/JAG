@@ -17,7 +17,8 @@
     @foreach($act as $activity)
         <div>
             @php
-            $activity_name = explode(" ", $activity->activity_name);
+
+            $activity_name = explode(" ", $activity);
             @endphp
             <h4>{{$activity_name}}</h4>
             <img style="width: 200px; height: 125px;" src="{{$activity->imgUrl}}" alt="No Image Available">
