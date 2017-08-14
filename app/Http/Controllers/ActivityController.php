@@ -16,6 +16,13 @@ class ActivityController extends Controller
         $activityTable->address = $request->address;
         $activityTable->save();
 
+
+        $business_response = json_decode($yelp_business_request->getBody());
+        $long = $business_response->businesses[0]->coordinates->longitude;
+        $lat = $business_response->businesses[0]->coordinates->latitude;
+        $businesses = $business_response->businesses;
+
+
        return redirect ('/account');
 
     }
