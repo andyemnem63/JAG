@@ -24,60 +24,13 @@
     @endforeach
 </div>--}}
 
-<div class="col-sm-6">
+{{--<div class="col-sm-6">
     @foreach($act as $activity)
     <div class="panel panel-default result-card">
 
     <div class="panel-heading result-card-head"
          style="background-image: url( {{ $activity->imgUrl}} );">
-<style> .result-card {
-        margin: 7px -5px;
-        height: 235px;
-    }
 
-    .result-card-head {
-        height: 185px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border: none;
-        position: relative;
-        padding: 0;
-    }
-
-    .result-card-name {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        display: block;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 0 15px;
-    }
-
-    .result-card-name:hover {
-        background-color: rgba(69, 187, 255, 0.70);
-    }
-
-    .result-card-body {
-        padding: 5px 15px 0 15px;
-        color: $brand-primary;
-    }
-
-    .result-card-body:hover {
-        background-color: rgba(69, 187, 255, 0.1);
-        padding-bottom: 3px;
-    }
-
-    .star-rating {
-        position: absolute;
-        bottom: 41px;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.0); /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)); /* Standard syntax */
-    }</style>
 </div>
 
 <div class="result-card-name">
@@ -86,6 +39,17 @@
 </div>
 
 </div>
+    @endforeach
+</div>--}}
+
+<div class="card" style="width: 20rem;">
+    @foreach($act as $activity)
+    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap">
+    <div class="card-block">
+        <h4 class="card-title">{{$activity->activity_name}}</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
+    </div>
     @endforeach
 </div>
 
