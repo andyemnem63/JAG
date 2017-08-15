@@ -31,7 +31,6 @@
     <div class="panel-heading result-card-head"
          style="background-image: url( {{ $activity->imgUrl}} );">
 
-
 </div>
 
 <div class="result-card-name">
