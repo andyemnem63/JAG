@@ -44,10 +44,10 @@
 
 <div class="card" style="width: 20em;">
     @foreach($act as $activity)
-    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" height="150">
+    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
     <div class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
-        <p class="card-text"></p>
+        <p class="card-text">Check out the reviews below.</p>
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
     </div>
     @endforeach

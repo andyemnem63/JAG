@@ -44,11 +44,11 @@
 
 <!-- Scripts -->
 <script src="{{ secure_asset('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/searchUser.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/searchUser.js') }}"></script>
 <!--JQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!--Google Maps-->
-<script type="text/javascript" src="{{ URL::asset('js/maps.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/maps.js') }}"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNfKjepbX3VkJFWOWG5TLmpNGdcaRrsHg&callback=initMap"></script>
 
