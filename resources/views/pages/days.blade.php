@@ -10,6 +10,7 @@
             <input type="hidden" name="id" value={{$trip_id}}>
         </div>
         <button type="submit" class="btn btn-primary">New Days</button>
+        <br><br>
     </form>
 
 {{--Display Activity--}}
