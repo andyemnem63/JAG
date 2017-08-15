@@ -133,7 +133,7 @@
                                 <input type="hidden" name="activity_name" value={{$business->name}}>
                                 <input type="hidden" name="url" value={{$business->url}}>
                                 <input type="hidden" name="imgUrl" value={{$business->image_url}}>
-                                <input type="hidden" name="address" value={{(string) $address}}>
+                                <input type="hidden" name="address" value={{trim(preg_replace('/\s+/', '', $address))}}>
                                 <button type="submit" class="btn btn-primary">Add to Dashboard</button>
                             </form>
 
