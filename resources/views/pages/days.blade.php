@@ -42,7 +42,11 @@
     @endforeach
 </div>--}}
 
-<div class="card" style="width: 180px; height:318px">
+<div class="card" style="width: 20em;">
+    <style>.card-img-top {
+            width:120px;
+            height: 200px;
+        }</style>
     @foreach($act as $activity)
     <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap">
     <div class="card-block">
