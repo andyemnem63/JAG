@@ -16,12 +16,32 @@
 <div class="activity text-center">
     @foreach($act as $activity)
         <div>
+
             <h4>{{$activity->activity_name}}</h4>
-            <img style="width: 50px;" src="{{$activity->imgUrl}}" alt="No Image Available">
-            <a href="{{$activity->url}}">{{$activity->url}}</a>
+            <img style="width: 200px; height: 125px;" src="{{$activity->imgUrl}}" alt="No Image Available">
+            <a href="{{$activity->url}}" target="_blank">See Yelp Reviews</a>
         </div>
     @endforeach
 </div>
+
+{{--<div class="col-sm-6">
+    <div class="panel panel-default result-card">
+        @foreach($act as $activity)
+
+    <div class="panel-heading result-card-head"
+         style="background-image: url( {{ $activity->imgUrl}} );">
+
+
+</div>
+
+<div class="result-card-name">
+    <h4 class="giveMeEllipsis"> {{$activity->activity_name}} </h4>
+
+</div>
+
+</div>
+    @endforeach
+</div>--}}
 
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
