@@ -50,7 +50,9 @@
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
     </div>
 </div>
+    <br>
 @endforeach
+
 
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
