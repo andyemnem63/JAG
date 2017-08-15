@@ -13,17 +13,6 @@
         <br><br>
     </form>
 
-{{--Display Activity--}}
-{{--<div class="activity text-center">
-    @foreach($act as $activity)
-        <div>
-
-            <h4>{{$activity->activity_name}}</h4>
-            <img style="width: 200px; height: 125px;" src="{{$activity->imgUrl}}" alt="No Image Available">
-            <a href="{{$activity->url}}" target="_blank">See Yelp Reviews</a>
-        </div>
-    @endforeach
-</div>--}}
 
 {{--<div class="col-sm-6">
     @foreach($act as $activity)
