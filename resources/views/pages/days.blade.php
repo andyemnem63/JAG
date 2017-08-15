@@ -71,7 +71,7 @@
     <h3>Polls</h3>
     @foreach($allPolls as $polls)
         @if($polls->invite_id == $trip_id)
-            <a href="/days/{{$trip_id}}/{{$polls->id}}/results" class="btn btn-default">{{$polls->poll_message}} {{$usersVoted}}/{{$totalUsers}}</a>
+            <a href="/days/{{$trip_id}}/{{$polls->invite_id}}/results" class="btn btn-default">{{$polls->poll_message}} {{$usersVoted}}/{{$totalUsers}}</a>
         @endif
     @endforeach
 
