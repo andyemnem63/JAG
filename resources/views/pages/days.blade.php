@@ -44,7 +44,7 @@
 
 <div class="card" style="width: 20em;">
     @foreach($act as $activity)
-    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="120" height="175">
+    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="200">
     <div class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text"></p>
