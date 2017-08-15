@@ -13,7 +13,7 @@
     </form>
 
 {{--Display Activity--}}
-<div class="activity text-center">
+{{--<div class="activity text-center">
     @foreach($act as $activity)
         <div>
 
@@ -22,6 +22,25 @@
             <a href="{{$activity->url}}" target="_blank">See Yelp Reviews</a>
         </div>
     @endforeach
+</div>--}}
+
+<div class="col-sm-6">
+    <div class="panel panel-default result-card">
+        @foreach($act as $activity)
+
+    <div class="panel-heading result-card-head"
+         style="background-image: url( {{ $activity->imgUrl}} );">
+
+
+</div>
+
+<div class="result-card-name">
+    <h4 class="giveMeEllipsis"> {{$activity->activity_name}} </h4>
+    @endforeach
+</div>
+
+</div>
+
 </div>
 
 {{--Create a counter variable to show the day number--}}

@@ -19,6 +19,7 @@ class ActivityController extends Controller
 
        return redirect ('/account');
 
+
     }
 
 }
