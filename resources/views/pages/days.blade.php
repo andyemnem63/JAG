@@ -42,12 +42,12 @@
     @endforeach
 </div>--}}
 
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 180px; height:318px">
     @foreach($act as $activity)
     <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap">
     <div class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text"></p>
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
     </div>
     @endforeach
