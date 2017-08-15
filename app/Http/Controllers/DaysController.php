@@ -27,13 +27,13 @@ class DaysController extends Controller
     }
 
 //$id is the invite_id in invite Table which comes from account.blade
-    public function show($id)
+    public function show($id, Request $request)
     {
     // Variables
         $totalUsers = 0;
         $usersVoted = 0;
     // Get from database
-        $act = Act::all();
+        $act = Act::where('user_id', '=', $request->user()->id)->get();
         $inviteTable = Invite::all();
         $allPolls = NewPoll::all();
         $allDays = Days::all();
