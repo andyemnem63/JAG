@@ -41,7 +41,6 @@
 </div>
     @endforeach
 </div>--}}
-<div class="row">
 
 <div class="card" style="width: 20em;">
     @foreach($act as $activity)
@@ -50,10 +49,8 @@
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text">Check out the Yelp reviews below.</p>
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
-</div>
-        @endforeach
     </div>
-
+    @endforeach
 
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
