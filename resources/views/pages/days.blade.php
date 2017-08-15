@@ -25,8 +25,8 @@
 </div>--}}
 
 <div class="col-sm-6">
+    @foreach($act as $activity)
     <div class="panel panel-default result-card">
-        @foreach($act as $activity)
 
     <div class="panel-heading result-card-head"
          style="background-image: url( {{ $activity->imgUrl}} );">
