@@ -49,9 +49,10 @@
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text">Check out the Yelp reviews below.</p>
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
-        @endforeach
-    </div>
 
+    </div>
+</div>
+@endforeach
 
 {{--Create a counter variable to show the day number--}}
     <?php $dayCount = 1; ?>
