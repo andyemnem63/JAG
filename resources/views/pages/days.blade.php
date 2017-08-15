@@ -48,9 +48,9 @@
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text">Check out the Yelp reviews below.</p>
         <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
+        <br><br>
     </div>
 </div>
-    <br>
 @endforeach
 
 
