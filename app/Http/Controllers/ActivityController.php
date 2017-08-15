@@ -19,7 +19,7 @@ class ActivityController extends Controller
         $activityTable->save();
 
 
-       return redirect ('/days/'.$request->id);
+       return redirect ('/days');
 
 
     }
