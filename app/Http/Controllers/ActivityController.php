@@ -18,7 +18,7 @@ class ActivityController extends Controller
         $activityTable->save();
 
 
-       return redirect ('/account');
+       return redirect ('/days');
 
 
     }
