@@ -43,7 +43,7 @@
 </div>--}}
 
 <div class="card" style="width: 20em;">
-    <style>.card-img-top {
+    <style> img {
             width:120px;
             height: 200px;
         }</style>
