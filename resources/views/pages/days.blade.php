@@ -1,6 +1,6 @@
 @extends('layouts.dashboard-dual')
 
-@section('leftcontent')
+{{--@section('leftcontent')--}}
 {{--Create Days--}}
     <h1>Welcome {{$currentUser}}</h1>
     <form action="/days" method="post" role="form">
@@ -13,6 +13,8 @@
         <br><br>
     </form>
 
+<div class="col-sm-3" id="left-column">
+
 
 @foreach($act as $activity)
 <div class="card" style="width: 20em;">
@@ -23,6 +25,7 @@
         <a href="/activity/{{$activity->id}}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
+</div>
 @endforeach
 
 
