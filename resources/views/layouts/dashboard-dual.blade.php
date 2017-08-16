@@ -30,7 +30,7 @@
             @include('inc.dash-side-nav')
         </div>
 
-        <div class="col-sm-3" id="left-column">
+        <div class="col-sm-6" id="left-column">
             <!-- put content for the left pane here -->
             @yield('leftcontent')
         </div>
