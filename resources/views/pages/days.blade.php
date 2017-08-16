@@ -13,7 +13,7 @@
         <br><br>
     </form>
 
-<div class="col-sm-3">
+
 @foreach($act as $activity)
 <div class="card" style="width: 20em;">
     <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
@@ -23,7 +23,6 @@
         <a href="/activity/{{$activity->id}}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
-</div>
 @endforeach
 
 
