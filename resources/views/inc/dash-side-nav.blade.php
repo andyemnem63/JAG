@@ -19,7 +19,7 @@
                 <li class="text-center"><a href="/days/{{ $trip_id }}"><i class="nav-icon trvlrs-calendar"></i></a></li>
                 <li class="text-center"><a href="/invite/{{ $trip_id }}/edit"><i class="nav-icon trvlrs-mail"></i></a></li>
                 <li class="text-center"><a href="/discover/{{ $trip_id }}"><i class="nav-icon trvlrs-location"></i></a></li>
-                <li class="text-center"><a href="#"><i class="nav-icon trvlrs-banknote"></i></a></li>
+                <li class="text-center"><a href="/days/{{$id}}"><i class="nav-icon trvlrs-banknote"></i></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
