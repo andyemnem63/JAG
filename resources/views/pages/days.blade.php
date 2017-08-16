@@ -33,11 +33,11 @@
 </div>--}}
 @foreach($act as $activity)
 <div class="card" style="width: 20em;">
-    <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
+    <img class="card-img-top" href='{{ $activity->url}}' target="_blank" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
     <div class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text">Check out the Yelp reviews below.</p>
-        <a href="{{ $activity->url}}" target="_blank" class="btn btn-primary">Yelp Reviews</a>
+        <a href="/activity/{id}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
 </div>

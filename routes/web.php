@@ -39,6 +39,7 @@ Route::get('/days/{tripId}/{pollId}/pollChoice', 'PollsController@index');
 
 //Activity
 Route::POST('/discovery/{id}/activity', 'ActivityController@post');
+Route::get('/activity/{id}', 'ActivityController@destroy');
 
 //facebook login
 Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');

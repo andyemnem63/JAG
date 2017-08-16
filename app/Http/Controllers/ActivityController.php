@@ -23,4 +23,13 @@ class ActivityController extends Controller
 
     }
 
+    public function destroy($id){
+        Act::destroy($id);
+        return redirect ("/account");
+
+
+        }
+
+    }
+
 }
