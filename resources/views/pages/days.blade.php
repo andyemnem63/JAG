@@ -19,7 +19,7 @@
     <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
     <a class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
-        <a href="{{$activity->url}}" target="_blank"><p class="card-text">Check out the Yelp reviews</p></a>
+        <a href="{{$activity->url}}" target="_blank"><p class="card-text">Click me for Yelp Reviews!</p></a>
         <a href="/activity/{{$activity->id}}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
