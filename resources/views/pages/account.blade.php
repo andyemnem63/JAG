@@ -59,7 +59,7 @@
 
                                         <a href="/days/{{$invites->invite_id}}">
                                             <button class="btn btn-primary" style="display:inline">
-                                                {{--<strong>View<i class="glyphicon glyphicon-chevron-right"></i></strong>--}}
+                                                <strong>View<i class="glyphicon glyphicon-chevron-right"></i></strong>
                                             </button>
                                         </a>
                                     </div>
