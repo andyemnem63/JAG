@@ -8,7 +8,7 @@
             <div class="col-sm-2">
                 <ul>
                     <li class="account-tile-title">
-                        <img src="{{ Auth::user()->avatar }}" alt="images/trvlrs.png"
+                        <img src="{{ Auth::user()->avatar }}" alt="{{$currentUser}}"
                              class="img-circle fb-profilepic"><strong>&nbsp;&nbsp;Your Account</strong></li>
                     <li class="account-tile"><span class="fa fa-map-marker tile-icon"></span><strong>Trips</strong></li>
                     <li class="account-tile"><span class="fa fa-user-circle-o tile-icon"></span><strong>Profile</strong>
