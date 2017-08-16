@@ -4,7 +4,7 @@
 {{--Create Days--}}
     <h1>Welcome {{$currentUser}}</h1>
     <form action="/days" method="post" role="form">
-        <legend>Itinerary</legend>
+        <legend>Here's your Itinerary! </legend>
         <div class="form-group">
             {{csrf_field()}}
             <input type="hidden" name="id" value={{$trip_id}}>
