@@ -13,10 +13,11 @@
         <br><br>
     </form>
 
-<div class="col-sm-3" id="left-column">
+
 
 
 @foreach($act as $activity)
+    <div class="col-sm-3" id="left-column">
 <div class="card" style="width: 20em;">
     <img class="card-img-top" src="{{ $activity->imgUrl}}" alt="Card image cap" width="225" height="150">
     <a class="card-block">
