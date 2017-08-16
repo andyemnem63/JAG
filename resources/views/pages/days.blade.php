@@ -2,9 +2,9 @@
 
 @section('leftcontent')
 {{--Create Days--}}
-    <h1>We are almost there {{$currentUser}}! Can you feel it?</h1>
+    <h3>Its almost time{{$currentUser}}!</h3>
     <form action="/days" method="post" role="form">
-        <legend>Here's your Itinerary! </legend>
+        <legend>Here's your Itinerary!</legend>
         <div class="form-group">
             {{csrf_field()}}
             <input type="hidden" name="id" value={{$trip_id}}>
