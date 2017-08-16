@@ -23,7 +23,6 @@
         <a href="/activity/{{$activity->id}}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
-</div>
 @endforeach
 
 
