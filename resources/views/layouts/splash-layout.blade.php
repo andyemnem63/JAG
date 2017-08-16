@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
     {{--Favicon--}}
-    <link rel="shortcut icon" href="images/mstile-144x144.png">
+    <link rel="shortcut icon" href="images/mstiles-144x144.png">
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/splash.css') }}" rel="stylesheet">

@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'trvlrs') }}</title>
 
     {{--Favicon--}}
-    <link rel="shortcut icon" href="images/mstile-144x144.png">
+    <link rel="shortcut icon" href="images/mstiles-144x144.png">
 
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
