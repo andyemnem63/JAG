@@ -37,7 +37,7 @@
     <div class="card-block">
         <h4 class="card-title">{{$activity->activity_name}}</h4>
         <p class="card-text">Check out the Yelp reviews below.</p>
-        <a href="/activity/{id}"  class="btn btn-primary">Delete</a>
+        <a href="/activity/{{$activity->id}}"  class="btn btn-primary">Delete</a>
         <br><br>
     </div>
 </div>
