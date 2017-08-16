@@ -30,6 +30,6 @@ class ActivityController extends Controller
 
         }
 
-    }
+
 
 }
