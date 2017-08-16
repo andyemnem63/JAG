@@ -2,7 +2,7 @@
 
 @section('leftcontent')
 {{--Create Days--}}
-    <h1>Welcome {{$currentUser}}</h1>
+    <h1>We are almost there {{$currentUser}}! Can you feel it?</h1>
     <form action="/days" method="post" role="form">
         <legend>Here's your Itinerary! </legend>
         <div class="form-group">
